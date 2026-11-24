@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 原生药物发现公司 · 七家公司介绍</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#4f46e5; --accent-strong:#4338ca; --accent-soft:#eef2ff;
+  --ink:#1c1917; --ink-2:#44403c; --muted:#78716c; --line:#e7e5e4; --line-2:#d6d3d1;
+  --bg:#fafaf9; --surface:#ffffff; --sidebar:#f5f5f4;
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter','Noto Sans SC',-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-strong);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:var(--accent-strong)}
+.container{max-width:1280px;margin:0 auto;padding:0 var(--s4)}
+.hero{background:var(--surface);border-bottom:1px solid var(--line);padding:var(--s6) 0 var(--s5)}
+.hero-eyebrow{font:600 12px/1 'Plus Jakarta Sans','Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s2)}
+.hero-title{font:800 44px/1.15 'Plus Jakarta Sans','Noto Sans SC',sans-serif;letter-spacing:-.02em;margin:0 0 var(--s2)}
+.hero-title em,.section-title em{font-style:normal;font-weight:300;color:var(--accent)}
+.hero-sub{font-size:18px;color:var(--ink-2);max-width:760px;margin:0 0 var(--s3)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);font:500 13px/1.4 'JetBrains Mono',monospace;color:var(--muted)}
+.tabs-wrap{position:sticky;top:0;z-index:20;background:rgba(250,250,249,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:var(--s1)}
+.tab{appearance:none;border:0;background:none;cursor:pointer;padding:16px 20px;font:600 14px/1 'Inter','Noto Sans SC',sans-serif;color:var(--muted);border-bottom:2px solid transparent}
+.tab:hover{color:var(--ink)}
+.tab.active{color:var(--accent-strong);border-bottom-color:var(--accent)}
+.tab-num{font:500 11px 'JetBrains Mono',monospace;margin-right:8px;opacity:.6}
+.panel{display:none}.panel.active{display:block}
+.panel-layout{display:grid;grid-template-columns:232px minmax(0,1fr);gap:var(--s5);padding:var(--s5) 0 var(--s6)}
+.toc{position:sticky;top:88px;align-self:start;max-height:calc(100vh - 110px);overflow:auto}
+.toc-label{font:600 11px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:var(--s2)}
+.toc-list{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+.toc-link{display:flex;gap:12px;align-items:baseline;padding:8px 0 8px 16px;margin-left:-1px;border-left:2px solid transparent;color:var(--ink-2);font-size:14px;line-height:1.4;border-bottom:0}
+.toc-link:hover{color:var(--ink);border-bottom:0}
+.toc-link.active{color:var(--accent-strong);border-left-color:var(--accent);font-weight:600}
+.toc-num{font:500 11px 'JetBrains Mono',monospace;color:var(--muted)}
+.section{padding-bottom:var(--s5);margin-bottom:var(--s5);border-bottom:1px solid var(--line)}
+.section:last-child{border-bottom:0}
+.section-num{font:500 12px 'JetBrains Mono',monospace;color:var(--accent);letter-spacing:.1em;margin-bottom:var(--s1)}
+.section-title{font:800 32px/1.2 'Plus Jakarta Sans','Noto Sans SC',sans-serif;letter-spacing:-.015em;margin:0 0 var(--s2)}
+.lede{font-size:17px;color:var(--ink-2);margin:0 0 var(--s2);max-width:820px}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:var(--s3)}
+.tag{font:600 12px/1 'Inter','Noto Sans SC',sans-serif;padding:7px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent-strong)}
+.tag.ghost{background:transparent;border:1px solid var(--line-2);color:var(--ink-2)}
+.subsection-title{font:700 15px/1.3 'Plus Jakarta Sans','Noto Sans SC',sans-serif;margin:var(--s4) 0 var(--s2);padding-top:var(--s2);border-top:1px solid var(--line);color:var(--ink)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.data-table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.55}
+.data-table th,.data-table td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.data-table tr:last-child td,.data-table tr:last-child th{border-bottom:0}
+.data-table thead th{background:var(--sidebar);font:600 12px/1.3 'Inter','Noto Sans SC',sans-serif;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.facts th{width:168px;background:var(--sidebar);font-weight:600;color:var(--ink-2);font-size:13px}
+.ov td:first-child{font-weight:700;white-space:nowrap}
+.ov td{min-width:120px}
+.founder{padding:12px 0;border-bottom:1px dashed var(--line)}
+.founder:last-child{border-bottom:0;padding-bottom:0}.founder:first-child{padding-top:0}
+.founder b{display:block;font-weight:700}
+.founder span{color:var(--ink-2)}
+.bullets{margin:0;padding-left:20px}
+.bullets li{margin-bottom:12px;color:var(--ink-2)}
+.bullets li b{color:var(--ink)}
+.links{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.links li{padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.links a{font-weight:600;font-size:15px;line-height:1.4}
+.links .meta{display:block;margin-top:4px;font-size:13px;color:var(--muted)}
+.callout{margin-top:var(--s3);padding:16px 20px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;color:var(--ink-2)}
+.callout b{color:var(--accent-strong);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
+.prose{color:var(--ink-2);margin:0}
+.note-list{margin:0;padding-left:20px}.note-list li{margin-bottom:12px;color:var(--ink-2)}
+.footer{border-top:1px solid var(--line);padding:var(--s4) 0;color:var(--muted);font-size:13px;background:var(--surface)}
+@media (max-width:1080px){.panel-layout{grid-template-columns:minmax(0,1fr)}.toc{display:none}.hero-title{font-size:34px}}
+@media (max-width:640px){.container{padding:0 var(--s2)}.facts th{width:96px}.section-title{font-size:26px}}
+@media print{.tabs-wrap,.toc{display:none}.panel{display:block!important}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="container">
+<div class="hero-eyebrow" data-zh="AI-native drug discovery · 2026-11" data-en="AI-native drug discovery · Nov 2026">AI-native drug discovery · 2026-11</div>
+<h1 class="hero-title" data-zh="AI 原生药物发现公司：&lt;em&gt;七家公司&lt;/em&gt;" data-en="AI-Native Drug Discovery: &lt;em&gt;Seven Companies&lt;/em&gt;">AI 原生药物发现公司：<em>七家公司</em></h1>
+<p class="hero-sub" data-zh="逐家介绍：成立时间、总部、创始人、产品、治疗领域、论文与视频" data-en="Company by company: founding, HQ, founders, products, therapeutic areas, papers and videos">逐家介绍：成立时间、总部、创始人、产品、治疗领域、论文与视频</p>
+<div class="hero-meta"><span data-zh="整理于 2026-11-24 · 基于公开新闻稿、监管文件、论文与媒体报道" data-en="Compiled Nov 24, 2026 · from public releases, filings, papers and press">整理于 2026-11-24 · 基于公开新闻稿、监管文件、论文与媒体报道</span></div>
+</div></header>
+<nav class="tabs-wrap"><div class="container"><div class="tabs">
+<button class="tab active" data-tab="zh"><span class="tab-num">01</span>中文版</button>
+<button class="tab" data-tab="en"><span class="tab-num">02</span>English</button>
+</div></div></nav>
+<main id="panel-zh" class="panel active">
+<div class="container"><div class="panel-layout">
+<aside class="toc"><div class="toc-label">目录</div><ul class="toc-list"><li><a href="#zh-00" class="toc-link"><span class="toc-num">00</span><span class="toc-name">总览对比</span></a></li><li><a href="#zh-01" class="toc-link"><span class="toc-num">01</span><span class="toc-name">Isomorphic Labs</span></a></li><li><a href="#zh-02" class="toc-link"><span class="toc-num">02</span><span class="toc-name">Insilico Medicine</span></a></li><li><a href="#zh-03" class="toc-link"><span class="toc-num">03</span><span class="toc-name">Boltz</span></a></li><li><a href="#zh-04" class="toc-link"><span class="toc-num">04</span><span class="toc-name">Chai Discovery</span></a></li><li><a href="#zh-05" class="toc-link"><span class="toc-num">05</span><span class="toc-name">Iambic Therapeutics</span></a></li><li><a href="#zh-06" class="toc-link"><span class="toc-num">06</span><span class="toc-name">Noetik</span></a></li><li><a href="#zh-07" class="toc-link"><span class="toc-num">07</span><span class="toc-name">Modella AI</span></a></li><li><a href="#zh-08" class="toc-link"><span class="toc-num">08</span><span class="toc-name">数据说明与核实提示</span></a></li></ul></aside>
+<div class="panel-content">
+<section class="section" id="zh-00">
+<div class="section-num">00</div>
+<h2 class="section-title">总览 <em>对比</em></h2>
+<p class="lede">七家公司按技术路线可分为三类：结构 / 亲和力基础模型（Boltz、Chai，Isomorphic 的 IsoDDE）、带自有管线的 AI 药企（Insilico、Iambic、Isomorphic）、以及面向肿瘤患者与病理数据的模型公司（Noetik、Modella）。</p>
+<div class="table-wrap"><table class="data-table ov"><thead><tr><th>公司</th><th>成立</th><th>总部</th><th>创始人</th><th>核心技术 / 产品</th><th>治疗领域</th><th>状态（2026-11）</th></tr></thead><tbody>
+<tr><td>Isomorphic Labs</td><td>2021</td><td>伦敦（洛桑设研究点）</td><td>Demis Hassabis（DeepMind 联合创始人，2024 诺奖）</td><td>IsoDDE 药物设计引擎；AlphaFold 3 联合研发</td><td>肿瘤、免疫 / 炎症</td><td>Alphabet 子公司；C 轮 50 亿美元；临床前</td></tr>
+<tr><td>Insilico Medicine</td><td>2014</td><td>波士顿 + 香港</td><td>Alex Zhavoronkov、Alex Aliper</td><td>Pharma.AI（PandaOmics、Chemistry42、inClinico）</td><td>纤维化、肿瘤、免疫、代谢、CNS</td><td>3696.HK 上市；rentosertib III 期</td></tr>
+<tr><td>Boltz</td><td>2024 研究 / 2026 注册 PBC</td><td>美国剑桥（MA）</td><td>Gabriele Corso、Jeremy Wohlwend、Saro Passaro</td><td>Boltz-1/2、BoltzGen（开源）；Boltz Lab</td><td>不限（基础设施）</td><td>A 轮 1.1 亿美元；累计约 1.38 亿</td></tr>
+<tr><td>Chai Discovery</td><td>2024</td><td>旧金山</td><td>Joshua Meier、Jack Dent、Matthew McPartlon、Jacques Boitreaud</td><td>Chai-1 结构预测；Chai-2 从头抗体设计</td><td>不限（抗体 / 生物药）</td><td>C 轮 4 亿美元，估值 38 亿</td></tr>
+<tr><td>Iambic Therapeutics</td><td>2019 注册 / 2020 起运营</td><td>圣迭戈</td><td>Tom Miller、Fred Manby</td><td>NeuralPLexer、Enchant、自动化实验室</td><td>肿瘤（HER2 等）</td><td>纳斯达克 IAM（2026-10）；I/Ib 期</td></tr>
+<tr><td>Noetik</td><td>2022</td><td>南旧金山</td><td>Ron Alfa、Jacob Rinaldi 等</td><td>OCTO-VC 虚拟细胞模型；TARIO-2</td><td>肿瘤（NSCLC、CRC）</td><td>A 轮；GSK 五年授权（约 5,000 万美元）</td></tr>
+<tr><td>Modella AI</td><td>2024</td><td>波士顿</td><td>Jill Stefanelli、Faisal Mahmood 等</td><td>PathChat、病理基础模型、Agentic AI</td><td>肿瘤（病理 / 生物标志物）</td><td>2026-01 被 AstraZeneca 收购</td></tr>
+</tbody></table></div></section>
+<section class="section" id="zh-01">
+<div class="section-num">01</div>
+<h2 class="section-title">Isomorphic <em>Labs</em></h2>
+<p class="lede">从 DeepMind 分拆出来的 AI 药物设计公司：以 AlphaFold 3 为起点，现已建成自有、不对外开放的“药物设计引擎” IsoDDE。</p>
+<div class="tag-row"><span class="tag">私营 · Alphabet 子公司</span><span class="tag ghost">小分子 + 生物药</span><span class="tag ghost">临床前 · 目标 2026 年底首次人体试验</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>成立时间</th><td>2021 年（英国 Companies House 登记于 2021 年 2 月；2021 年 11 月对外宣布）</td></tr>
+<tr><th>总部</th><td>英国伦敦；另在瑞士洛桑设研究办公室（2022 年 12 月宣布）</td></tr>
+<tr><th>融资 / 现状（截至 2026-11）</th><td>2025 年 3 月首轮外部融资 6 亿美元（Thrive 领投）→ 2026 年 5 月 B 轮 21 亿美元（Thrive 领投）→ <b>2026 年 11 月 17 日 C 轮 50 亿美元</b>（Greenoaks 与 Sequoia 联合领投，Alphabet 继续参与）。BioSpace 统计累计至少 77 亿美元，且尚未公开披露任何具体资产。</td></tr>
+<tr><th>创始人及背景</th><td><div class="founder"><b>Sir Demis Hassabis</b><span>创始人兼 CEO。DeepMind 联合创始人，目前仍领导 Google DeepMind；因 AlphaFold 与 John Jumper 共享 2024 年诺贝尔化学奖。</span></div><div class="founder"><b>Max Jaderberg</b><span>总裁（2026 年 1 月接任 Colin Murdoch）。此前任首席 AI 官，是 AlphaFold 3 论文作者之一。</span></div><div class="founder"><b>Colin Murdoch</b><span>创始团队成员，前 DeepMind 首席商务官，曾任 Isomorphic 总裁至 2026 年 1 月。</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">主要产品与服务</h3>
+<ul class="bullets"><li><b>IsoDDE（Isomorphic Labs Drug Design Engine）</b>：统一的计算药物设计系统，覆盖蛋白–配体结构预测、结合亲和力预测、抗体–抗原界面预测，以及仅凭序列的“盲”口袋识别（含隐蔽口袋）。2026-02-10 技术报告称：在 Runs N’ Poses 泛化基准最难的子集上准确率为 AlphaFold 3 的两倍以上；抗体–抗原高保真预测为 AF3 的 2.3 倍、Boltz-2 的 19.8 倍；亲和力预测达到或超过 FEP+ 等物理方法，且无需实验晶体结构（均为公司自报）。</li><li><b>自有管线</b>：肿瘤与免疫方向的多个项目处于 IND 申报研究阶段，公司预期 2026 年底前提交首个 IND 并启动首次人体试验。</li><li><b>药企合作</b>：Eli Lilly 与 Novartis（2024 年 1 月，合计潜在价值近 30 亿美元；Novartis 于 2025 年 2 月追加 3 个项目）；Johnson &amp; Johnson（2026 年 1 月，首个同时涵盖小分子、抗体等生物药、多肽与分子胶的合作）。</li><li><b>商业形态</b>：IsoDDE 仅供内部团队与合作药企使用，不提供自助软件。</li></ul>
+<h3 class="subsection-title">对应治疗领域</h3>
+<p class="prose">以<b>肿瘤学</b>与<b>免疫学 / 炎症</b>为主（自有管线）；R&amp;D World 报道其有 17 个在研项目，另涉及心血管。合作项目的靶点未披露。</p>
+<h3 class="subsection-title">核心技术相关的论文 / 文档</h3>
+<ul class="links">
+<li><a href="https://www.nature.com/articles/s41586-024-07487-w" target="_blank" rel="noopener">Accurate structure prediction of biomolecular interactions with AlphaFold 3</a><span class="meta">Abramson et al., <i>Nature</i> 630:493–500 (2024)。AF3 论文，DeepMind 与 Isomorphic 共同研发。</span></li>
+<li><a href="https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier" target="_blank" rel="noopener">The Isomorphic Labs Drug Design Engine unlocks a new frontier beyond AlphaFold</a><span class="meta">2026-02-10 官方文章与 27 页技术报告（IsoDDE）。</span></li>
+<li><a href="https://www.scientificamerican.com/article/an-alphafold-4-scientists-marvel-at-deepmind-drug-spin-offs-exclusive-new-ai/" target="_blank" rel="noopener">“An AlphaFold 4”—scientists marvel at DeepMind drug spin-off’s exclusive new AI</a><span class="meta">Scientific American 报道：IsoDDE 为专有模型，技术报告对方法细节披露有限。</span></li>
+<li><a href="https://isomorphiclabs.com/partnerships" target="_blank" rel="noopener">Isomorphic Labs — Partnerships</a><span class="meta">官方合作伙伴页面（Novartis、Lilly、J&amp;J）。</span></li>
+</ul>
+<h3 class="subsection-title">YouTube / 视频</h3>
+<ul class="links">
+<li><a href="https://www.youtube.com/watch?v=RIrnMVDM_N8" target="_blank" rel="noopener">Google DeepMind CEO on Drug Discovery, Hype, Isomorphic (Bloomberg)</a><span class="meta">YouTube · Hassabis 谈 AlphaFold 3 与 Isomorphic（2024-05）</span></li>
+<li><a href="https://www.youtube.com/watch?v=zERXIjIDFpc" target="_blank" rel="noopener">Unlock Life’s Mysteries with AlphaFold 3: Google DeepMind and Isomorphic Labs</a><span class="meta">YouTube · AlphaFold 3 官方介绍</span></li>
+<li><a href="https://www.youtube.com/watch?v=uHY_hnqgrus" target="_blank" rel="noopener">Isomorphic Labs Raises $5 Billion To Prepare AI Drug Candidates For Human Trials</a><span class="meta">YouTube · 第三方对 50 亿美元 C 轮的解读（非官方）</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Isomorphic+Labs+IsoDDE" target="_blank" rel="noopener">在 YouTube 搜索更多</a><span class="meta">YouTube 搜索结果（备用入口）</span></li>
+</ul>
+<div class="callout"><b>最新动态</b>2026-11-17 宣布 50 亿美元 C 轮，创生物医药私募单轮融资纪录；公司仍处于晚期临床前阶段，尚未披露具体候选药物。</div>
+</section>
+<section class="section" id="zh-02">
+<div class="section-num">02</div>
+<h2 class="section-title">Insilico <em>Medicine</em>（英矽智能）</h2>
+<p class="lede">最早把生成式 AI 同时用于“靶点发现 + 分子生成”的公司之一；rentosertib 是首个靶点与分子结构均由生成式 AI 发现、并进入 III 期的药物。</p>
+<div class="tag-row"><span class="tag">港交所上市 · 3696.HK</span><span class="tag ghost">端到端生成式 AI</span><span class="tag ghost">III 期 · rentosertib</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>成立时间</th><td>2014 年，美国马里兰州巴尔的摩（约翰斯·霍普金斯大学新兴技术中心）。个别媒体写作 2013 年，以公司披露的 2014 年为准。</td></tr>
+<tr><th>总部</th><td>美国波士顿/剑桥（2024 年自纽约迁入）与中国香港双总部；在上海、宜兴、蒙特利尔、阿布扎比等地设有实验室或办公室。</td></tr>
+<tr><th>融资 / 现状（截至 2026-11）</th><td><b>2025-12-30 在港交所主板上市</b>，募资约 22.77 亿港元，为 2025 年港股最大生物科技 IPO。2025 年收入 5,624 万美元，年末现金 3.933 亿美元。公司称 2026 年已签署的合作累计潜在价值约 100 亿美元。</td></tr>
+<tr><th>创始人及背景</th><td><div class="founder"><b>Alex Zhavoronkov, PhD</b><span>创始人、董事长、CEO 兼首席商务官。Queen’s University 商科与理科学士（2001）、Johns Hopkins 生物技术硕士（2007）、莫斯科国立大学物理数学博士（2008）；2008–2018 年任职 Biogerontology Research Foundation；发表论文 300 余篇、著书三部；ARDD 衰老与药物发现大会共同发起人。</span></div><div class="founder"><b>Alex Aliper, PhD</b><span>联合创始人、总裁；计算生物学背景，是早期生成对抗网络（druGAN）、GENTRL 等论文的共同作者。</span></div><div class="founder"><b>Feng Ren（任峰）, PhD</b><span>首席科学官兼联席 CEO（非创始人，2021 年加入）。哈佛大学有机化学博士（2007）；2007–2018 年在 GSK 工作，最后职位为神经退行 DPU 化学负责人；曾任 Medicilon 高级副总裁；约 80 篇论文、约 120 项专利。</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">主要产品与服务</h3>
+<ul class="bullets"><li><b>Pharma.AI 平台</b>：PandaOmics（靶点发现与多组学分析）、Chemistry42（生成式化学，含 30 余个生成模型）、inClinico（临床试验结果预测）、Science42:DORA、Nach01、Generative Biologics 等；自 2020 年起以模块化软件商业化。</li><li><b>自动化机器人实验室</b>：2022 年 D 轮 6,000 万美元融资用于建设 AI 驱动的自动化药物发现实验室。</li><li><b>Rentosertib（ISM001-055 / INS018_055）</b>：TNIK 抑制剂，用于特发性肺纤维化（IPF）。PandaOmics 选出 TNIK 靶点，Chemistry42 生成分子；2025-06 在 <i>Nature Medicine</i> 发表 IIa 期结果；<b>2026 年 7 月启动全球 III 期</b>（约 320 例、52 周随机研究）。</li><li><b>其他管线</b>：ISM6331（pan-TEAD 抑制剂，实体瘤；ESMO 2026 公布间皮瘤早期数据）、ISM3412（MAT2A）、ISM5411（肠道限制性 PHD1/2 抑制剂，炎症性肠病，已完成两项 I 期）、ISM8969（NLRP3，炎症 / CNS）以及 GIPR、Amylin、APJ、Lp(a) 等心代谢项目。</li><li><b>授权与合作</b>：与 Servier 的肿瘤合作最高 8.88 亿美元（2026-01）；与 Exelixis、Menarini/Stemline 有对外授权；与复星医药有合作。</li></ul>
+<h3 class="subsection-title">对应治疗领域</h3>
+<p class="prose"><b>纤维化</b>（IPF 等）、<b>肿瘤</b>、<b>免疫 / 炎症</b>（IBD）、<b>代谢与肥胖</b>、疼痛、CNS 神经免疫；同时延伸至衰老与长寿研究。</p>
+<h3 class="subsection-title">核心技术相关的论文 / 文档</h3>
+<ul class="links">
+<li><a href="https://doi.org/10.1038/s41587-019-0224-x" target="_blank" rel="noopener">Deep learning enables rapid identification of potent DDR1 kinase inhibitors</a><span class="meta">Zhavoronkov et al., <i>Nature Biotechnology</i> 37:1038–1040 (2019)。GENTRL 生成式强化学习，46 天内完成设计到验证。</span></li>
+<li><a href="https://arxiv.org/abs/2101.09050" target="_blank" rel="noopener">Chemistry42: An AI-based platform for de novo molecular design</a><span class="meta">arXiv 技术说明：平台架构与生成模型。</span></li>
+<li><a href="https://doi.org/10.1038/s41587-024-02143-0" target="_blank" rel="noopener">A small-molecule TNIK inhibitor targets fibrosis in preclinical and clinical models</a><span class="meta">Ren et al., <i>Nature Biotechnology</i> 43(1):63–75 (2025)。从靶点发现到候选分子的完整 AI 流程。</span></li>
+<li><a href="https://doi.org/10.1038/s41591-025-03743-2" target="_blank" rel="noopener">A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis: a randomized phase 2a trial</a><span class="meta">Xu et al., <i>Nature Medicine</i>（2025-06-03）。rentosertib IIa 期。</span></li>
+<li><a href="https://ir.insilico.com/" target="_blank" rel="noopener">Insilico Medicine — Investor Relations</a><span class="meta">港交所公告、年报与上市文件。</span></li>
+</ul>
+<h3 class="subsection-title">YouTube / 视频</h3>
+<ul class="links">
+<li><a href="https://www.youtube.com/watch?v=4anbQ9v3xlM" target="_blank" rel="noopener">Generative AI in Drug Discovery and Pharma, with Insilico Medicine (CXOTalk #782)</a><span class="meta">YouTube · Zhavoronkov 访谈</span></li>
+<li><a href="https://www.youtube.com/watch?v=IKANjAmkUcY" target="_blank" rel="noopener">Insilico CEO explains how AI-powered drug discovery significantly shortens approval timelines</a><span class="meta">YouTube · CNBC Squawk Box Asia</span></li>
+<li><a href="https://www.youtube.com/watch?v=t2EIOS3vd8M" target="_blank" rel="noopener">AI and robotics (webinar with Alex Zhavoronkov)</a><span class="meta">YouTube · 多模态多组学 Transformer 研究网络研讨会</span></li>
+<li><a href="https://www.youtube.com/c/InsilicoMedicine" target="_blank" rel="noopener">Insilico Medicine — official YouTube channel</a><span class="meta">YouTube · 公司官方频道</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Insilico+Medicine+rentosertib+Zhavoronkov" target="_blank" rel="noopener">在 YouTube 搜索更多</a><span class="meta">YouTube 搜索结果（备用入口）</span></li>
+</ul>
+<div class="callout"><b>最新动态</b>2026 年 7 月 rentosertib 启动全球 III 期；2026-10-26 在 ESMO 2026 公布 ISM6331 间皮瘤早期数据（130 mg 组 ORR 40%，样本量小、剂量递增仍在进行）。</div>
+</section>
+<section class="section" id="zh-03">
+<div class="section-num">03</div>
+<h2 class="section-title"><em>Boltz</em></h2>
+<p class="lede">MIT 团队做出的开源 AlphaFold 3 替代方案（Boltz-1/2、BoltzGen），2026 年成立公司并推出商业平台 Boltz Lab。</p>
+<div class="tag-row"><span class="tag">私营 · 公益公司（PBC）</span><span class="tag ghost">开源基础模型 + 平台</span><span class="tag ghost">不自研药物</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>成立时间</th><td>研究项目始于 2024 年（Boltz-1 于 2024-11 发布）；<b>2026-01-08 注册为公益公司（PBC）</b>并同日宣布种子轮。各数据库写作 2024 / 2025 / 2026，口径不一。</td></tr>
+<tr><th>总部</th><td>美国马萨诸塞州剑桥（MIT Jameel Clinic 孵化）。个别第三方数据库误列为伦敦，以官方发布稿为准。</td></tr>
+<tr><th>融资 / 现状（截至 2026-11）</th><td>种子轮 2,800 万美元（2026-01，a16z、Amplify、Zetta 联合领投）→ <b>A 轮 1.1 亿美元</b>（2026-11-18，Bessemer 领投）；累计约 1.38 亿美元，团队约 40 人。客户包括 Pfizer、GSK、Takeda、BMS；据报道全球前 20 药企中有 6 家付费使用。</td></tr>
+<tr><th>创始人及背景</th><td><div class="founder"><b>Gabriele Corso</b><span>联合创始人兼 CEO。MIT CSAIL 博士（2025 年 6 月），Regina Barzilay 课题组；主导 DiffDock、Boltz-1、Boltz-2 等模型。</span></div><div class="founder"><b>Jeremy Wohlwend</b><span>联合创始人兼 CTO；MIT Barzilay 课题组，主导 Boltz-1 的开发。</span></div><div class="founder"><b>Saro Passaro</b><span>联合创始人兼研究负责人；MIT 研究科学家，构建了 Boltz-2。</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">主要产品与服务</h3>
+<ul class="bullets"><li><b>Boltz-1</b>（2024-11）：首个完全开源、可商用（MIT 许可）、精度接近 AlphaFold 3 报告水平的生物分子复合物结构预测模型。</li><li><b>Boltz-2</b>（2025-06，与 Recursion 合作）：同时预测结构与结合亲和力，宣称是首个接近 FEP 精度的 AI 模型，速度快约 1000 倍；MIT 许可，2026-03 起提供 NVIDIA NIM。</li><li><b>BoltzGen</b>（2025-10 预印本）：开源的“通用结合物设计”模型，面向多种模态并附实验验证。</li><li><b>Boltz Lab</b>（2026-01）：托管平台与设计 Agent（小分子、蛋白）；公司称其小分子筛选流程比开源版快约 10 倍。2026 年 6 月发布首批专有模型。</li><li><b>Pfizer 合作</b>（2026-01）：多年期，在 Pfizer 历史数据上微调，构建结构预测、小分子亲和力与生物药设计的专属模型；所得化合物归 Pfizer 所有。</li></ul>
+<h3 class="subsection-title">对应治疗领域</h3>
+<p class="prose"><b>不限治疗领域</b>——定位为“分子设计基础设施”，客户为药企与生物科技公司，自身不做管线。</p>
+<h3 class="subsection-title">核心技术相关的论文 / 文档</h3>
+<ul class="links">
+<li><a href="https://doi.org/10.1101/2024.11.19.624167" target="_blank" rel="noopener">Boltz-1: Democratizing Biomolecular Interaction Modeling</a><span class="meta">Wohlwend et al., bioRxiv (2024)。预印本。</span></li>
+<li><a href="https://doi.org/10.1101/2025.06.14.659707" target="_blank" rel="noopener">Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction</a><span class="meta">Passaro et al., bioRxiv (2025-06)。预印本，未经同行评审。</span></li>
+<li><a href="https://www.genengnews.com/topics/artificial-intelligence/boltzgen-democratizes-ai-therapeutic-design-expands-druggable-universe/" target="_blank" rel="noopener">BoltzGen: Toward Universal Binder Design</a><span class="meta">预印本（2025-10）；GEN 报道及模型说明。</span></li>
+<li><a href="https://github.com/jwohlwend/boltz" target="_blank" rel="noopener">Boltz — GitHub repository</a><span class="meta">开源代码与权重（MIT 许可）。</span></li>
+<li><a href="https://jclinic.mit.edu/boltz-2-towards-accurate-and-efficient-binding-affinity-prediction/" target="_blank" rel="noopener">Boltz-2 — MIT Jameel Clinic overview</a><span class="meta">MIT Jameel Clinic 的官方说明与要点。</span></li>
+</ul>
+<h3 class="subsection-title">YouTube / 视频</h3>
+<ul class="links">
+<li><a href="https://www.latent.space/p/boltz" target="_blank" rel="noopener">Beyond AlphaFold: How Boltz is Open-Sourcing the Future of Drug Discovery</a><span class="meta">Latent Space 播客页（页面内嵌 YouTube 视频，约 81 分钟）。</span></li>
+<li><a href="https://raisinghealth.simplecast.com/episodes/building-foundation-models-for-biology-EtZbUkZu" target="_blank" rel="noopener">Building AI Foundation Models for Molecular Design (a16z)</a><span class="meta">a16z 播客：Corso 与 Wohlwend 谈 Boltz 创立与 Boltz Lab。</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Boltz+Gabriele+Corso+Boltz-2+BoltzGen" target="_blank" rel="noopener">YouTube 搜索：Boltz Corso</a><span class="meta">YouTube 搜索结果（备用入口）</span></li>
+</ul>
+<div class="callout"><b>最新动态</b>2026-11-18 宣布 1.1 亿美元 A 轮；公司表示下一代模型已能生成比当前公开版本更好的分子。</div>
+</section>
+<section class="section" id="zh-04">
+<div class="section-num">04</div>
+<h2 class="section-title">Chai <em>Discovery</em></h2>
+<p class="lede">从开源结构预测（Chai-1）发展到“零样本”从头抗体设计（Chai-2），2026 年与多家大药企签署合作。</p>
+<div class="tag-row"><span class="tag">私营 · 估值 38 亿美元</span><span class="tag ghost">从头抗体 / 生物药设计</span><span class="tag ghost">OpenAI 早期投资</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>成立时间</th><td>2024 年 3 月；2024-09-09 走出隐身并发布 Chai-1 与种子轮。</td></tr>
+<tr><th>总部</th><td>美国加州旧金山（早期借用 OpenAI 旧金山办公室办公）。</td></tr>
+<tr><th>融资 / 现状（截至 2026-11）</th><td>种子轮约 3,000 万美元（2024）→ A 轮 7,000 万美元（2025）→ B 轮 1.3 亿美元（2025-12，估值 13 亿美元）→ <b>C 轮 4 亿美元（2026-07，估值 38 亿美元，Index Ventures 领投）</b>。2026 年披露的合作方包括 Eli Lilly、Pfizer、Novartis、argenx、Bristol Myers Squibb、GSK。</td></tr>
+<tr><th>创始人及背景</th><td><div class="founder"><b>Joshua Meier</b><span>联合创始人兼 CEO。曾在 Meta（FAIR）、OpenAI 与 Absci 工作；与 Jack Dent 是哈佛 CS 同学。</span></div><div class="founder"><b>Jack Dent</b><span>联合创始人兼总裁（个别报道称 CTO）。前 Stripe 工程师；据报道 2018 年经 Sam Altman 介绍与 Meier 结识。</span></div><div class="founder"><b>Matthew McPartlon</b><span>联合创始人兼 CTO。前 VantAI、Absci，芝加哥大学背景。</span></div><div class="founder"><b>Jacques Boitreaud</b><span>联合创始人。前 Aqemia。</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">主要产品与服务</h3>
+<ul class="bullets"><li><b>Chai-1</b>（2024-09）：开放的多模态结构预测基础模型，统一预测蛋白、小分子、DNA、RNA 与共价修饰；官方称 PoseBusters 成功率 77%（AF3 为 76%），并提供免费网页界面。</li><li><b>Chai-2</b>（2025-06-30）：零样本从头抗体设计。对 52 个无已知抗体结合物的靶点，每个靶点最多测试 20 个设计，约 16% 命中率，约一半靶点至少有一个结合物；微型蛋白湿实验成功率 68%；从设计到实验验证约两周。</li><li><b>Chai-2 后续成果</b>（2025-11 预印本）：全长 IgG 设计、可开发性接近临床抗体（88 个 IgG / 28 个抗原，86% 至多一项警示），并覆盖 GPCR 与肽–MHC 等难成药靶点。<b>Chai-3</b> 已纳入 2026-07 的 Novartis 合作。</li><li><b>合作模式</b>：向药企提供模型与定制模型（如 2026-01 与 Lilly 的合作），公司愿景是为分子设计打造“计算机辅助设计套件”。</li></ul>
+<h3 class="subsection-title">对应治疗领域</h3>
+<p class="prose"><b>以模态为中心（抗体 / 生物药），不绑定单一适应症</b>；强调 GPCR、肽–MHC 等“难成药”靶点。</p>
+<h3 class="subsection-title">核心技术相关的论文 / 文档</h3>
+<ul class="links">
+<li><a href="https://doi.org/10.1101/2025.07.05.663018" target="_blank" rel="noopener">Zero-shot antibody design in a 24-well plate (Chai-2)</a><span class="meta">Chai Discovery, bioRxiv (2025)。预印本，未经同行评审。</span></li>
+<li><a href="https://doi.org/10.1101/2025.11.29.691346" target="_blank" rel="noopener">Drug-like antibody design against challenging targets with atomic precision</a><span class="meta">Chai Discovery, bioRxiv (2025-11)。全长 IgG、可开发性、GPCR 与 pMHC。</span></li>
+<li><a href="https://www.chaidiscovery.com/news/introducing-chai-2" target="_blank" rel="noopener">Introducing Chai-2: Zero-shot antibody design in a 24-well plate</a><span class="meta">官方博客与技术报告入口。</span></li>
+<li><a href="https://www.chaidiscovery.com" target="_blank" rel="noopener">Chai Discovery — official site (Chai-1 release and news)</a><span class="meta">Chai-1 发布说明、新闻与产品入口。</span></li>
+</ul>
+<h3 class="subsection-title">YouTube / 视频</h3>
+<ul class="links">
+<li><a href="https://www.youtube.com/watch?v=rFFi2Guv2nU" target="_blank" rel="noopener">No Priors Ep. 121 — Chai-2 with Joshua Meier and Jack Dent</a><span class="meta">YouTube · 创始人谈 Chai-2 与公司起源（约 50 分钟）</span></li>
+<li><a href="https://www.youtube.com/watch?v=wv53mDmY-k0" target="_blank" rel="noopener">Chai Discovery’s Bitter Lesson: Drug Design Is Another Scaling Problem (Sequoia)</a><span class="meta">YouTube · Meier 与 McPartlon 访谈</span></li>
+<li><a href="https://www.youtube.com/watch?v=gKNEjYkfB88" target="_blank" rel="noopener">$4B AI Drug Founder: Left OpenAI, $1T Eli Lilly Signed On, Designing Drugs in 24 Hours</a><span class="meta">YouTube · 第三方对 Meier 的访谈（标题为频道自拟）</span></li>
+</ul>
+<div class="callout"><b>最新动态</b>2026-07 完成 4 亿美元 C 轮；2026-08 宣布与 Bristol Myers Squibb 的抗体发现合作。</div>
+</section>
+<section class="section" id="zh-05">
+<div class="section-num">05</div>
+<h2 class="section-title">Iambic <em>Therapeutics</em></h2>
+<p class="lede">物理信息驱动的 AI（NeuralPLexer、Enchant）加自动化高通量实验室，主打“从项目启动到临床约两年”；2026 年 10 月在纳斯达克上市。</p>
+<div class="tag-row"><span class="tag">纳斯达克上市 · IAM</span><span class="tag ghost">小分子 · 肿瘤</span><span class="tag ghost">I/Ib 期 · IAM1363</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>成立时间</th><td>2019 年 10 月注册成立（前身为 Entos, Inc.）；2020 年 Miller 与 Manby 分别出任 CEO / CTO，因此公司常称“成立于 2020 年”。</td></tr>
+<tr><th>总部</th><td>美国加州圣迭戈（5627 Oberlin Drive）。</td></tr>
+<tr><th>融资 / 现状（截至 2026-11）</th><td><b>2026 年 10 月在纳斯达克上市（IAM）</b>：每股 16 美元，基础发行约 1.5 亿美元，承销商超额配售权全部行使。截至 2026-06-30 的 12 个月收入约 1,800 万美元（来自 AbbVie、Takeda、Bayer 等合作）。</td></tr>
+<tr><th>创始人及背景</th><td><div class="founder"><b>Tom Miller, PhD</b><span>联合创始人兼 CEO。2008–2022 年任加州理工学院（Caltech）化学教授；Texas A&amp;M 化学与数学学士、伦敦大学学院（UCL）理论化学 M.Phil.、牛津大学理论化学博士。</span></div><div class="founder"><b>Fred Manby, PhD</b><span>联合创始人兼 CTO。2010–2022 年任布里斯托大学理论化学教授；约克大学化学学士与博士。</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">主要产品与服务</h3>
+<ul class="bullets"><li><b>NeuralPLexer</b>：基于流匹配的生成式模型，预测蛋白–配体复合物结构及构象变化；论文登上 <i>Nature Machine Intelligence</i> 封面（2024），并与 NVIDIA 合作以 BioNeMo API 形式提供非商业使用。</li><li><b>Enchant</b>：多模态 Transformer，用于预测临床前与临床终点；<b>Enchant v3 于 2026-09-21 发布</b>，公司以“分子超级智能”（molecular superintelligence）来描述平台。</li><li><b>自动化实验</b>：平板化学与生物自动化流程，每个项目每周可合成并测试数百个化合物，为模型持续生成数据。</li><li><b>IAM1363</b>：口服、高选择性、可穿透血脑屏障的 HER2 抑制剂，结合 HER2 的 DFG-out（II 型）构象；I/Ib 期进行中，注册性试验最早可能在 2027 年启动；与 Jazz 合作研究联用 zanidatamab。另有 KIF18A、CDK2/4 两个临床前项目，计划 2026 年第四季度提交 IND。</li><li><b>合作伙伴</b>：AbbVie（2026-06）、Takeda、Bayer、Jazz Pharmaceuticals 等。</li></ul>
+<h3 class="subsection-title">对应治疗领域</h3>
+<p class="prose"><b>肿瘤学</b>：HER2 驱动的实体瘤（乳腺癌、胃食管腺癌 GEA、HER2 扩增 / 突变 NSCLC）；临床前项目靶向 KIF18A 与 CDK2/4。</p>
+<h3 class="subsection-title">核心技术相关的论文 / 文档</h3>
+<ul class="links">
+<li><a href="https://www.nature.com/articles/s42256-024-00792-z" target="_blank" rel="noopener">State-specific protein–ligand complex structure prediction with a multiscale deep generative model (NeuralPLexer)</a><span class="meta">Qiao, Nie, Vahdat, Miller &amp; Anandkumar, <i>Nature Machine Intelligence</i> 6:195–208 (2024)。</span></li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/1997038/000119312526396704/iam-20260921.htm" target="_blank" rel="noopener">Iambic Therapeutics — Form S-1 (Sep 2026)</a><span class="meta">招股书：平台、IAM1363 数据与风险因素，信息密度最高的一份公开文件。</span></li>
+<li><a href="https://www.iambic.ai/post/esmo-iam1363" target="_blank" rel="noopener">IAM1363 ESMO 2025 clinical data</a><span class="meta">公司新闻稿：I/Ib 期单药活性与安全性。</span></li>
+<li><a href="https://www.iambic.ai/platform" target="_blank" rel="noopener">Iambic — Platform and Pipeline</a><span class="meta">官方平台页面。</span></li>
+</ul>
+<h3 class="subsection-title">YouTube / 视频</h3>
+<ul class="links">
+<li><a href="https://www.youtube.com/watch?v=aGcfH52_Wow" target="_blank" rel="noopener">Revolutionizing Drug Discovery with AI: Fred Manby of Iambic Therapeutics</a><span class="meta">YouTube · Manby 谈 Enchant 与 NeuralPLexer3</span></li>
+<li><a href="https://www.broadinstitute.org/videos/machine-learning-drug-discovery-symposium-2025-models-medicines-keynote-delivering-promise" target="_blank" rel="noopener">From Models to Medicines — Tom Miller keynote (Broad Institute, 2025)</a><span class="meta">Broad Institute 视频页 · 机器学习与药物发现研讨会主题演讲</span></li>
+<li><a href="https://www.cnbc.com/video/2026/05/21/disruptor-50-iambic-ceo-on-utilizing-ai-in-the-drug-discovery-process.html" target="_blank" rel="noopener">Disruptor 50: Iambic CEO on utilizing AI in the drug discovery process (CNBC)</a><span class="meta">CNBC 视频页 · 2026-05</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Iambic+Therapeutics+NeuralPLexer+Enchant" target="_blank" rel="noopener">在 YouTube 搜索更多</a><span class="meta">YouTube 搜索结果（备用入口）</span></li>
+</ul>
+<div class="callout"><b>最新动态</b>2026-10 纳斯达克上市；2026-09 发布 Enchant v3；IAM1363 注册性试验最早 2027 年启动（取决于监管反馈）。</div>
+</section>
+<section class="section" id="zh-06">
+<div class="section-num">06</div>
+<h2 class="section-title">Noetik</h2>
+<p class="lede">用自建的人类肿瘤多模态空间数据训练基础模型（OCTO-VC、TARIO-2），核心命题是“癌症药物失败多因患者选择而非药理”；2026 年 GSK 以约 5,000 万美元授权其模型。</p>
+<div class="tag-row"><span class="tag">私营 · A 轮</span><span class="tag ghost">肿瘤 · 虚拟细胞基础模型</span><span class="tag ghost">模型授权模式</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>成立时间</th><td>2022 年（部分资料写作 2021 年底；公司 2025 年称“成立三年”）。</td></tr>
+<tr><th>总部</th><td>美国加州南旧金山（多数资料）；部分数据库写作旧金山。</td></tr>
+<tr><th>融资 / 现状（截至 2026-11）</th><td>种子轮 1,400 万美元（2023-09，DCVC 领投）→ A 轮 4,000 万美元（2024-08，Polaris 领投）；公开口径累计约 5,400 万美元（个别数据库为 6,200 万）。<b>2026-01-08 与 GSK 达成五年期授权</b>，含约 5,000 万美元首付与近期里程碑，另有年度授权费。</td></tr>
+<tr><th>创始人及背景</th><td><div class="founder"><b>Ron Alfa, MD, PhD</b><span>联合创始人兼 CEO。斯坦福大学 MD-PhD（神经科学），UCSD 学士、UCL 医学史硕士，Paul &amp; Daisy Soros 奖学金获得者；此前在 Recursion 负责 Discovery &amp; Product，并在 TEDMED 2018 发表“What if we could map all of human biology?”。</span></div><div class="founder"><b>Jacob Rinaldi, PhD</b><span>联合创始人兼首席科学官；此前任 Recursion 肿瘤学负责人。</span></div><div class="founder"><b>Lacey Padron, PhD</b><span>创始团队成员、CTO；公司创始团队整体来自 Recursion 与 Parker Institute for Cancer Immunotherapy（PICI）。</span></div><div class="founder"><b>Daniel Bear</b><span>AI 研发副总裁，主导自监督模型架构；在 Latent Space 访谈中与 Alfa 共同代表公司，个别媒体称其为创始人。</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">主要产品与服务</h3>
+<ul class="bullets"><li><b>OCTO / OCTO-VC（虚拟细胞基础模型）</b>：在空间转录组等数据上自监督训练，可模拟完整肿瘤组织中带空间位置的单细胞基因表达；2024 年首发时训练于约 4,000 万个空间分辨细胞，并配套可视化工具 Celleporter。</li><li><b>TARIO-2</b>（2026 年初）：自回归 Transformer，可从常规 H&amp;E 病理切片预测约 19,000 个基因的空间表达图；与 Agenus 合作，在 ASCO 2026 展示仅凭常规病理图像识别 BOT+BAL 获益患者（MSS 转移性结直肠癌）。</li><li><b>自建多模态数据</b>：人类肿瘤的空间转录组、空间蛋白组、H&amp;E 影像与全外显子测序。</li><li><b>GSK 授权</b>：非独占五年授权，针对非小细胞肺癌与结直肠癌的 OCTO-VC 模型，并联合生成定制数据；另与 Bruker 扩大合作（2026-02）。</li></ul>
+<h3 class="subsection-title">对应治疗领域</h3>
+<p class="prose"><b>肿瘤学</b>——非小细胞肺癌、结直肠癌，侧重免疫肿瘤药的患者分层与生物标志物，并尝试泛癌模型。</p>
+<h3 class="subsection-title">核心技术相关的论文 / 文档</h3>
+<ul class="links">
+<li><a href="https://noetik.ai/octo-vc" target="_blank" rel="noopener">OCTO-VirtualCell and Celleporter — technical report</a><span class="meta">公司技术报告（据公司 LinkedIn 发布）。</span></li>
+<li><a href="https://www.noetik.blog/p/gsk-licenses-noetiks-octo-virtual-cell" target="_blank" rel="noopener">GSK Licenses NOETIK’s OCTO-Virtual Cell Foundation Models</a><span class="meta">Alfa 在 Noetik 博客发布的 GSK 合作说明。</span></li>
+<li><a href="https://www.rdworldonline.com/noetiks-tario-2-a-world-model-that-reads-a-tumor-from-a-single-slide/" target="_blank" rel="noopener">Noetik’s TARIO-2: A “world model” that reads a tumor from a single slide</a><span class="meta">R&amp;D World：TARIO-2 与 Agenus 的 ASCO 2026 数据解读。</span></li>
+<li><a href="https://www.noetik.ai/news" target="_blank" rel="noopener">Noetik — News &amp; Insights</a><span class="meta">官方新闻页（含 TARIO-2 白皮书与新闻稿）。</span></li>
+</ul>
+<h3 class="subsection-title">YouTube / 视频</h3>
+<ul class="links">
+<li><a href="https://www.latent.space/p/noetik" target="_blank" rel="noopener">Training Transformers to solve 95% failure rate of Cancer Trials — Ron Alfa &amp; Daniel Bear (Latent Space)</a><span class="meta">Latent Space 播客页（含 YouTube 视频，约 80 分钟）。</span></li>
+<li><a href="https://www.tedmed.com/talks/show?id=767353" target="_blank" rel="noopener">What if we could map all of human biology? — Ron Alfa, TEDMED 2018</a><span class="meta">TEDMED 演讲页（Alfa 在 Recursion 时期）。</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Noetik+Ron+Alfa+OCTO-VC" target="_blank" rel="noopener">YouTube 搜索：Noetik Ron Alfa</a><span class="meta">YouTube 搜索结果（备用入口，含 NYSE TV 访谈等）</span></li>
+</ul>
+<div class="callout"><b>最新动态</b>2026-06-15 发布 TARIO-2 对 BOT+BAL 响应预测结果；商业模式被视为“直接为 AI 模型付费而非为药物资产付费”的少见案例。</div>
+</section>
+<section class="section" id="zh-07">
+<div class="section-num">07</div>
+<h2 class="section-title">Modella <em>AI</em></h2>
+<p class="lede">哈佛 / MGB Mahmood 实验室孵化的病理 AI 公司，核心是 PathChat 及多模态病理基础模型；被 AstraZeneca 收购，并入其肿瘤研发体系。</p>
+<div class="tag-row"><span class="tag">已被 AstraZeneca 收购（2026-01-13）</span><span class="tag ghost">病理基础模型 + Agentic AI</span><span class="tag ghost">肿瘤</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>成立时间</th><td>2024 年（2024-06-18 走出隐身并发布 PathChat 2）。</td></tr>
+<tr><th>总部</th><td>美国马萨诸塞州波士顿；现为 AstraZeneca 集团成员。</td></tr>
+<tr><th>融资 / 现状</th><td><b>2026-01-13 被 AstraZeneca 收购</b>，交易金额未披露；此前双方自 2025 年 7 月起合作。AstraZeneca 称这是大型药企首次收购 AI 公司。</td></tr>
+<tr><th>创始人及背景</th><td><div class="founder"><b>Jill Stefanelli, PhD</b><span>总裁、联合创始人兼 CEO。此前任 Paige AI 总裁兼首席商务官，更早在 Invitae / ArcherDX 负责伴随诊断合作；堪萨斯州立大学分子医学与诊断病理学博士。</span></div><div class="founder"><b>Faisal Mahmood, PhD</b><span>联合创始人；哈佛医学院 / Mass General Brigham 计算病理学教授，Mahmood Lab 负责人，UNI、CONCH、PathChat、TITAN 等模型的资深（通讯）作者。</span></div><div class="founder"><b>Richard J. Chen, PhD</b><span>创始 CTO；哈佛博士期间在 Mahmood 课题组参与 UNI、CONCH、PathChat。</span></div><div class="founder"><b>Ming Yang (Max) Lu, PhD</b><span>创始首席科学官（CSO）；PathChat 论文第一作者。</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">主要产品与服务</h3>
+<ul class="bullets"><li><b>PathChat / PathChat 2</b>：面向人体病理的多模态生成式 AI “副驾驶”，可结合图像与自然语言做鉴别诊断、形态描述与开放式问答；<b>PathChat DX</b> 获 FDA Breakthrough Device Designation。</li><li><b>多模态病理基础模型</b>：公司持有 PathChat 及 Mahmood 实验室其他基础模型的独家许可（如 UNI、CONCH、TITAN）。TITAN 用 33.6 万张全切片图像预训练，并与病理报告和合成描述对齐。</li><li><b>Agentic AI 平台</b>：面向诊断、预后与治疗工作流，在 AstraZeneca 肿瘤研发中用于临床开发与生物标志物发现。</li><li><b>后续动向</b>：Mahmood、Lu 等四位前创始团队成员于 2026 年 11 月另起炉灶创办 Aevius（2,200 万美元种子轮，Insight Partners 领投），做临床数据 AI。</li></ul>
+<h3 class="subsection-title">对应治疗领域</h3>
+<p class="prose"><b>肿瘤学</b>（病理、生物标志物、临床开发与伴随诊断），不涉及分子生成。</p>
+<h3 class="subsection-title">核心技术相关的论文 / 文档</h3>
+<ul class="links">
+<li><a href="https://doi.org/10.1038/s41586-024-07618-3" target="_blank" rel="noopener">A multimodal generative AI copilot for human pathology (PathChat)</a><span class="meta">Lu et al., <i>Nature</i> (2024-06-12)。</span></li>
+<li><a href="https://www.nature.com/articles/s41591-024-02857-3" target="_blank" rel="noopener">Towards a general-purpose foundation model for computational pathology (UNI)</a><span class="meta">Chen et al., <i>Nature Medicine</i> (2024)。仅视觉基础模型；同期发表的 CONCH 为视觉–语言模型。</span></li>
+<li><a href="https://arxiv.org/abs/2411.19666" target="_blank" rel="noopener">A multimodal whole-slide foundation model for pathology (TITAN)</a><span class="meta">Ding et al., <i>Nature Medicine</i> 31:3749–3761 (2025)；arXiv 版本。</span></li>
+<li><a href="https://arxiv.org/pdf/2506.20964" target="_blank" rel="noopener">Evidence-based diagnostic reasoning with multi-agent copilot for human pathology (PathChat+, SlideSeek)</a><span class="meta">arXiv 2025：Agentic 病理诊断推理。</span></li>
+<li><a href="https://www.modella.ai/az-acquisition" target="_blank" rel="noopener">Modella AI Announces Acquisition by AstraZeneca</a><span class="meta">官方收购公告。</span></li>
+</ul>
+<h3 class="subsection-title">YouTube / 视频</h3>
+<ul class="links">
+<li><a href="https://youtu.be/fWDU5P0ap28" target="_blank" rel="noopener">PathChat 2 launch video (Modella AI)</a><span class="meta">YouTube · Modella 隐身发布时链接的 PathChat 2 介绍视频</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Modella+AI+PathChat+Faisal+Mahmood" target="_blank" rel="noopener">YouTube 搜索：Modella AI PathChat</a><span class="meta">YouTube 搜索结果（备用入口）</span></li>
+</ul>
+<div class="callout"><b>最新动态</b>2026-11 前创始团队的 Aevius 获 2,200 万美元种子轮；Modella 本身已作为 AstraZeneca 肿瘤 AI 能力的一部分运营。</div>
+</section>
+<section class="section" id="zh-08"><div class="section-num">08</div><h2 class="section-title">数据说明与<em>核实提示</em></h2><ul class="note-list"><li><b>成立时间口径不一</b>：Isomorphic（2021 年 2 月注册 / 11 月宣布）、Boltz（研究项目 2024 / 公司 2026）、Iambic（2019 年注册 / 2020 年起运营）、Noetik（2021–2022）、Insilico（个别媒体写 2013）。本文以公司官方披露或监管文件为准，并在各节注明。</li><li><b>总部口径不一</b>：Boltz 在官方发布稿中为美国剑桥，个别第三方数据库写作伦敦；Noetik 多数资料为南旧金山；Insilico 同时在波士顿与香港设总部。</li><li><b>性能数字多为公司自报</b>：IsoDDE 对 AF3 / Boltz-2 / FEP+ 的比较、Chai-2 命中率、Boltz-2 对 FEP 的接近程度均来自公司技术报告或预印本，Boltz-2、BoltzGen、Chai-2 未经同行评审；IsoDDE 为专有模型，外界无法独立复现。</li><li><b>融资与估值来自媒体与公司公告</b>，不同数据库口径略有差异（如 Noetik 累计 5,400 万 vs 6,200 万美元）。Modella 的收购金额未披露。</li><li><b>YouTube 链接</b>：已列出的 YouTube 链接均来自检索结果；标注“备用入口”的为 YouTube 搜索页。Boltz 与 Noetik 的主要访谈以 Latent Space 页面（内嵌 YouTube）形式给出，因未取得其 YouTube 直链。部分视频为第三方解读，已标注“非官方”。</li><li><b>时效</b>：内容截至 2026-11-24。Isomorphic C 轮（11-17）、Boltz A 轮（11-18）、Iambic 上市（10 月）均为近期事件，后续细节可能变化。</li></ul></section>
+</div></div></div></main>
+<main id="panel-en" class="panel">
+<div class="container"><div class="panel-layout">
+<aside class="toc"><div class="toc-label">Contents</div><ul class="toc-list"><li><a href="#en-00" class="toc-link"><span class="toc-num">00</span><span class="toc-name">Overview</span></a></li><li><a href="#en-01" class="toc-link"><span class="toc-num">01</span><span class="toc-name">Isomorphic Labs</span></a></li><li><a href="#en-02" class="toc-link"><span class="toc-num">02</span><span class="toc-name">Insilico Medicine</span></a></li><li><a href="#en-03" class="toc-link"><span class="toc-num">03</span><span class="toc-name">Boltz</span></a></li><li><a href="#en-04" class="toc-link"><span class="toc-num">04</span><span class="toc-name">Chai Discovery</span></a></li><li><a href="#en-05" class="toc-link"><span class="toc-num">05</span><span class="toc-name">Iambic Therapeutics</span></a></li><li><a href="#en-06" class="toc-link"><span class="toc-num">06</span><span class="toc-name">Noetik</span></a></li><li><a href="#en-07" class="toc-link"><span class="toc-num">07</span><span class="toc-name">Modella AI</span></a></li><li><a href="#en-08" class="toc-link"><span class="toc-num">08</span><span class="toc-name">Data notes & verification</span></a></li></ul></aside>
+<div class="panel-content">
+<section class="section" id="en-00">
+<div class="section-num">00</div>
+<h2 class="section-title">Overview <em>at a glance</em></h2>
+<p class="lede">By technical route the seven fall into three groups: structure / affinity foundation models (Boltz, Chai, and Isomorphic’s IsoDDE), AI-driven drug developers with their own pipelines (Insilico, Iambic, Isomorphic), and data-driven oncology model companies built on patient and pathology data (Noetik, Modella).</p>
+<div class="table-wrap"><table class="data-table ov"><thead><tr><th>Company</th><th>Founded</th><th>HQ</th><th>Founders</th><th>Core technology / products</th><th>Therapeutic areas</th><th>Status (Nov 2026)</th></tr></thead><tbody>
+<tr><td>Isomorphic Labs</td><td>2021</td><td>London (Lausanne research site)</td><td>Demis Hassabis (DeepMind co-founder, 2024 Nobel)</td><td>IsoDDE drug-design engine; co-developed AlphaFold 3</td><td>Oncology, immunology / inflammation</td><td>Alphabet subsidiary; $5B Series C; preclinical</td></tr>
+<tr><td>Insilico Medicine</td><td>2014</td><td>Boston + Hong Kong</td><td>Alex Zhavoronkov, Alex Aliper</td><td>Pharma.AI (PandaOmics, Chemistry42, inClinico)</td><td>Fibrosis, oncology, immunology, metabolic, CNS</td><td>HKEX 3696; rentosertib in Phase III</td></tr>
+<tr><td>Boltz</td><td>2024 research / PBC in 2026</td><td>Cambridge, MA</td><td>Gabriele Corso, Jeremy Wohlwend, Saro Passaro</td><td>Boltz-1/2, BoltzGen (open source); Boltz Lab</td><td>Agnostic (infrastructure)</td><td>$110M Series A; ~$138M total</td></tr>
+<tr><td>Chai Discovery</td><td>2024</td><td>San Francisco</td><td>Joshua Meier, Jack Dent, Matthew McPartlon, Jacques Boitreaud</td><td>Chai-1 structure prediction; Chai-2 de novo antibody design</td><td>Agnostic (antibodies / biologics)</td><td>$400M Series C at $3.8B</td></tr>
+<tr><td>Iambic Therapeutics</td><td>Incorporated 2019 / operating from 2020</td><td>San Diego</td><td>Tom Miller, Fred Manby</td><td>NeuralPLexer, Enchant, automated labs</td><td>Oncology (HER2 and others)</td><td>Nasdaq IAM (Oct 2026); Phase 1/1b</td></tr>
+<tr><td>Noetik</td><td>2022</td><td>South San Francisco</td><td>Ron Alfa, Jacob Rinaldi and others</td><td>OCTO-VC virtual-cell models; TARIO-2</td><td>Oncology (NSCLC, CRC)</td><td>Series A; five-year GSK licence (~$50M)</td></tr>
+<tr><td>Modella AI</td><td>2024</td><td>Boston</td><td>Jill Stefanelli, Faisal Mahmood and others</td><td>PathChat, pathology foundation models, agentic AI</td><td>Oncology (pathology / biomarkers)</td><td>Acquired by AstraZeneca, Jan 2026</td></tr>
+</tbody></table></div></section>
+<section class="section" id="en-01">
+<div class="section-num">01</div>
+<h2 class="section-title">Isomorphic <em>Labs</em></h2>
+<p class="lede">AI drug-design company spun out of DeepMind. Starting from AlphaFold 3, it has built IsoDDE, a proprietary Drug Design Engine that is not publicly released.</p>
+<div class="tag-row"><span class="tag">Private · Alphabet subsidiary</span><span class="tag ghost">Small molecules + biologics</span><span class="tag ghost">Preclinical · first-in-human targeted by end-2026</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>Founded</th><td>2021 (incorporated Feb 2021 per UK Companies House; publicly announced Nov 2021)</td></tr>
+<tr><th>Headquarters</th><td>London, UK; research office in Lausanne, Switzerland (announced Dec 2022)</td></tr>
+<tr><th>Funding / status (as of Nov 2026)</th><td>$600M first external round (Mar 2025, led by Thrive) → $2.1B Series B (May 2026, led by Thrive) → <b>$5B Series C on Nov 17, 2026</b> (co-led by Greenoaks and Sequoia, with Alphabet). BioSpace puts the total at ≥$7.7B raised, with no asset publicly disclosed.</td></tr>
+<tr><th>Founders & backgrounds</th><td><div class="founder"><b>Sir Demis Hassabis</b><span>Founder & CEO. Co-founder of DeepMind and still leads Google DeepMind; shared the 2024 Nobel Prize in Chemistry with John Jumper for AlphaFold.</span></div><div class="founder"><b>Max Jaderberg</b><span>President (succeeded Colin Murdoch in Jan 2026). Previously Chief AI Officer; an author of the AlphaFold 3 paper.</span></div><div class="founder"><b>Colin Murdoch</b><span>Founding-team member and former DeepMind Chief Business Officer; served as Isomorphic president until Jan 2026.</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">Key products & services</h3>
+<ul class="bullets"><li><b>IsoDDE (Isomorphic Labs Drug Design Engine)</b>: a unified computational drug-design system covering protein–ligand structure prediction, binding-affinity prediction, antibody–antigen interface prediction, and sequence-only “blind” pocket identification (including cryptic pockets). The Feb 10, 2026 technical report claims &gt;2× AlphaFold 3 accuracy on the hardest Runs N’ Poses generalisation systems, 2.3× AF3 and 19.8× Boltz-2 on high-fidelity antibody–antigen prediction, and affinity prediction matching or exceeding physics methods such as FEP+ without a crystal structure (all company-reported).</li><li><b>Internal pipeline</b>: several oncology and immunology programmes in IND-enabling studies; first IND filing and first-in-human dosing expected by end of 2026.</li><li><b>Pharma collaborations</b>: Eli Lilly and Novartis (Jan 2024, ~$3B combined potential value; Novartis added three programmes in Feb 2025); Johnson &amp; Johnson (Jan 2026, its first deal spanning small molecules, biologics, peptides and molecular glues).</li><li><b>Delivery model</b>: IsoDDE is used by internal teams and partner pharma groups; it is not offered as self-service software.</li></ul>
+<h3 class="subsection-title">Therapeutic areas</h3>
+<p class="prose">Primarily <b>oncology</b> and <b>immunology / inflammation</b> in its own pipeline; R&amp;D World reports 17 active programmes that also touch cardiovascular disease. Partnered targets are undisclosed.</p>
+<h3 class="subsection-title">Core technology papers & documents</h3>
+<ul class="links">
+<li><a href="https://www.nature.com/articles/s41586-024-07487-w" target="_blank" rel="noopener">Accurate structure prediction of biomolecular interactions with AlphaFold 3</a><span class="meta">Abramson et al., <i>Nature</i> 630:493–500 (2024). The AF3 paper, co-developed by DeepMind and Isomorphic.</span></li>
+<li><a href="https://www.isomorphiclabs.com/articles/the-isomorphic-labs-drug-design-engine-unlocks-a-new-frontier" target="_blank" rel="noopener">The Isomorphic Labs Drug Design Engine unlocks a new frontier beyond AlphaFold</a><span class="meta">Official Feb 10, 2026 article and 27-page technical report on IsoDDE.</span></li>
+<li><a href="https://www.scientificamerican.com/article/an-alphafold-4-scientists-marvel-at-deepmind-drug-spin-offs-exclusive-new-ai/" target="_blank" rel="noopener">“An AlphaFold 4”—scientists marvel at DeepMind drug spin-off’s exclusive new AI</a><span class="meta">Scientific American: IsoDDE is proprietary and the report gives little methodological detail.</span></li>
+<li><a href="https://isomorphiclabs.com/partnerships" target="_blank" rel="noopener">Isomorphic Labs — Partnerships</a><span class="meta">Official partnerships page (Novartis, Lilly, J&amp;J).</span></li>
+</ul>
+<h3 class="subsection-title">YouTube & video</h3>
+<ul class="links">
+<li><a href="https://www.youtube.com/watch?v=RIrnMVDM_N8" target="_blank" rel="noopener">Google DeepMind CEO on Drug Discovery, Hype, Isomorphic (Bloomberg)</a><span class="meta">YouTube · Hassabis on AlphaFold 3 and Isomorphic (May 2024)</span></li>
+<li><a href="https://www.youtube.com/watch?v=zERXIjIDFpc" target="_blank" rel="noopener">Unlock Life’s Mysteries with AlphaFold 3: Google DeepMind and Isomorphic Labs</a><span class="meta">YouTube · official AlphaFold 3 introduction</span></li>
+<li><a href="https://www.youtube.com/watch?v=uHY_hnqgrus" target="_blank" rel="noopener">Isomorphic Labs Raises $5 Billion To Prepare AI Drug Candidates For Human Trials</a><span class="meta">YouTube · third-party analysis of the $5B round (unofficial)</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Isomorphic+Labs+IsoDDE" target="_blank" rel="noopener">Search YouTube for more</a><span class="meta">YouTube search results (fallback)</span></li>
+</ul>
+<div class="callout"><b>Latest</b>On Nov 17, 2026 it announced a $5B Series C, a record single private round for biotech. The company remains in late preclinical stage and has not named a candidate.</div>
+</section>
+<section class="section" id="en-02">
+<div class="section-num">02</div>
+<h2 class="section-title">Insilico <em>Medicine</em></h2>
+<p class="lede">One of the first companies to apply generative AI to both target discovery and molecule generation. Rentosertib is the first drug whose target and molecule were both AI-derived to reach Phase III.</p>
+<div class="tag-row"><span class="tag">HKEX-listed · 3696.HK</span><span class="tag ghost">End-to-end generative AI</span><span class="tag ghost">Phase III · rentosertib</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>Founded</th><td>2014, Baltimore, Maryland (Johns Hopkins Emerging Technology Centers). A few outlets say 2013; the company states 2014.</td></tr>
+<tr><th>Headquarters</th><td>Boston/Cambridge, MA (moved from New York in 2024) and Hong Kong; labs/offices in Shanghai, Yixing, Montreal, Abu Dhabi and elsewhere.</td></tr>
+<tr><th>Funding / status (as of Nov 2026)</th><td><b>Listed on the HKEX Main Board on Dec 30, 2025</b>, raising ~HK$2.28B, the largest Hong Kong biotech IPO of 2025. FY2025 revenue US$56.2M; year-end cash US$393.3M. The company says 2026 agreements carry ~US$10B in aggregate potential value.</td></tr>
+<tr><th>Founders & backgrounds</th><td><div class="founder"><b>Alex Zhavoronkov, PhD</b><span>Founder, Chairman, CEO &amp; CBO. Bachelor’s degrees in commerce and science from Queen’s University (2001), MS in biotechnology from Johns Hopkins (2007), PhD in physics and mathematics from Moscow State University (2008); at the Biogerontology Research Foundation 2008–2018; 300+ papers and three books; co-organiser of the ARDD meeting.</span></div><div class="founder"><b>Alex Aliper, PhD</b><span>Co-founder and President; computational-biology background and co-author of early generative papers such as druGAN and GENTRL.</span></div><div class="founder"><b>Feng Ren（任峰）, PhD</b><span>Chief Scientific Officer and Co-CEO (not a founder; joined 2021). PhD in organic chemistry from Harvard (2007); GSK 2007–2018, last as head of chemistry in the neurodegeneration DPU; formerly SVP at Medicilon; ~80 papers and ~120 patents.</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">Key products & services</h3>
+<ul class="bullets"><li><b>Pharma.AI platform</b>: PandaOmics (target discovery / multi-omics), Chemistry42 (generative chemistry, 30+ generative models), inClinico (trial-outcome prediction), Science42:DORA, Nach01, Generative Biologics and others; commercialised as modular software since 2020.</li><li><b>Automated robotics lab</b>: the $60M Series D (2022) funded an AI-driven automated drug-discovery laboratory.</li><li><b>Rentosertib (ISM001-055 / INS018_055)</b>: a TNIK inhibitor for idiopathic pulmonary fibrosis (IPF). PandaOmics nominated TNIK and Chemistry42 generated the molecule; Phase IIa results appeared in <i>Nature Medicine</i> (Jun 2025); <b>a global Phase III started in July 2026</b> (~320 patients, 52-week randomised study).</li><li><b>Other pipeline</b>: ISM6331 (pan-TEAD inhibitor, solid tumours; early mesothelioma data at ESMO 2026), ISM3412 (MAT2A), ISM5411 (gut-restricted PHD1/2 inhibitor for IBD; two Phase I trials completed), ISM8969 (NLRP3; inflammation / CNS), and cardiometabolic programmes against GIPR, amylin, APJ and Lp(a).</li><li><b>Licensing &amp; partnerships</b>: oncology collaboration with Servier worth up to $888M (Jan 2026); out-licensing to Exelixis and Menarini/Stemline; partnership with Fosun Pharma.</li></ul>
+<h3 class="subsection-title">Therapeutic areas</h3>
+<p class="prose"><b>Fibrosis</b> (IPF and others), <b>oncology</b>, <b>immunology / inflammation</b> (IBD), <b>metabolic and obesity</b>, pain and CNS neuroimmune disease, with an extension into ageing and longevity research.</p>
+<h3 class="subsection-title">Core technology papers & documents</h3>
+<ul class="links">
+<li><a href="https://doi.org/10.1038/s41587-019-0224-x" target="_blank" rel="noopener">Deep learning enables rapid identification of potent DDR1 kinase inhibitors</a><span class="meta">Zhavoronkov et al., <i>Nat Biotechnol</i> 37:1038–1040 (2019). GENTRL generative RL; design to validation in 46 days.</span></li>
+<li><a href="https://arxiv.org/abs/2101.09050" target="_blank" rel="noopener">Chemistry42: An AI-based platform for de novo molecular design</a><span class="meta">arXiv technical description of the platform and its generative models.</span></li>
+<li><a href="https://doi.org/10.1038/s41587-024-02143-0" target="_blank" rel="noopener">A small-molecule TNIK inhibitor targets fibrosis in preclinical and clinical models</a><span class="meta">Ren et al., <i>Nat Biotechnol</i> 43(1):63–75 (2025). The end-to-end AI journey from target to candidate.</span></li>
+<li><a href="https://doi.org/10.1038/s41591-025-03743-2" target="_blank" rel="noopener">A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis: a randomized phase 2a trial</a><span class="meta">Xu et al., <i>Nat Med</i> (Jun 3, 2025). Rentosertib Phase IIa.</span></li>
+<li><a href="https://ir.insilico.com/" target="_blank" rel="noopener">Insilico Medicine — Investor Relations</a><span class="meta">HKEX announcements, annual results and listing documents.</span></li>
+</ul>
+<h3 class="subsection-title">YouTube & video</h3>
+<ul class="links">
+<li><a href="https://www.youtube.com/watch?v=4anbQ9v3xlM" target="_blank" rel="noopener">Generative AI in Drug Discovery and Pharma, with Insilico Medicine (CXOTalk #782)</a><span class="meta">YouTube · interview with Zhavoronkov</span></li>
+<li><a href="https://www.youtube.com/watch?v=IKANjAmkUcY" target="_blank" rel="noopener">Insilico CEO explains how AI-powered drug discovery significantly shortens approval timelines</a><span class="meta">YouTube · CNBC Squawk Box Asia</span></li>
+<li><a href="https://www.youtube.com/watch?v=t2EIOS3vd8M" target="_blank" rel="noopener">AI and robotics (webinar with Alex Zhavoronkov)</a><span class="meta">YouTube · webinar on multimodal multi-omics transformers</span></li>
+<li><a href="https://www.youtube.com/c/InsilicoMedicine" target="_blank" rel="noopener">Insilico Medicine — official YouTube channel</a><span class="meta">YouTube · company channel</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Insilico+Medicine+rentosertib+Zhavoronkov" target="_blank" rel="noopener">Search YouTube for more</a><span class="meta">YouTube search results (fallback)</span></li>
+</ul>
+<div class="callout"><b>Latest</b>Rentosertib began a global Phase III in July 2026. On Oct 26, 2026, early ISM6331 mesothelioma data were shown at ESMO 2026 (40% ORR at 130 mg; small sample, dose escalation ongoing).</div>
+</section>
+<section class="section" id="en-03">
+<div class="section-num">03</div>
+<h2 class="section-title"><em>Boltz</em></h2>
+<p class="lede">An MIT team’s open-source alternative to AlphaFold 3 (Boltz-1/2, BoltzGen), incorporated in 2026 with a commercial platform, Boltz Lab.</p>
+<div class="tag-row"><span class="tag">Private · public benefit corporation</span><span class="tag ghost">Open-source foundation models + platform</span><span class="tag ghost">Does not develop its own drugs</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>Founded</th><td>Research project began in 2024 (Boltz-1 released Nov 2024); <b>incorporated as a PBC on Jan 8, 2026</b>, announcing its seed round the same day. Databases list 2024, 2025 or 2026 depending on definition.</td></tr>
+<tr><th>Headquarters</th><td>Cambridge, Massachusetts (incubated at the MIT Jameel Clinic). A few third-party databases list London; the official launch release gives Cambridge.</td></tr>
+<tr><th>Funding / status (as of Nov 2026)</th><td>$28M seed (Jan 2026, co-led by a16z, Amplify and Zetta) → <b>$110M Series A</b> (Nov 18, 2026, led by Bessemer); ~$138M total, ~40 people. Customers include Pfizer, GSK, Takeda and BMS; reportedly six of the top-20 pharmas pay for its models.</td></tr>
+<tr><th>Founders & backgrounds</th><td><div class="founder"><b>Gabriele Corso</b><span>Co-founder and CEO. PhD from MIT CSAIL (Jun 2025) in Regina Barzilay’s group; led DiffDock, Boltz-1 and Boltz-2.</span></div><div class="founder"><b>Jeremy Wohlwend</b><span>Co-founder and CTO; from the Barzilay group at MIT; led development of Boltz-1.</span></div><div class="founder"><b>Saro Passaro</b><span>Co-founder and Head of Research; MIT research scientist who built Boltz-2.</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">Key products & services</h3>
+<ul class="bullets"><li><b>Boltz-1</b> (Nov 2024): the first fully open, commercially usable (MIT licence) model to approach AlphaFold 3’s reported accuracy for biomolecular complexes.</li><li><b>Boltz-2</b> (Jun 2025, with Recursion): predicts structure and binding affinity together, claimed to be the first AI model to approach FEP accuracy at ~1000× the speed; MIT licence, available as an NVIDIA NIM from Mar 2026.</li><li><b>BoltzGen</b> (Oct 2025 preprint): an open-source “universal binder design” model across modalities with experimental validation.</li><li><b>Boltz Lab</b> (Jan 2026): hosted platform with small-molecule and protein design agents; the company says its small-molecule screening pipeline runs ~10× faster than the open-source version. First proprietary models followed in Jun 2026.</li><li><b>Pfizer collaboration</b> (Jan 2026): multi-year; Boltz refines its models on Pfizer’s historical data into exclusive models for structure prediction, small-molecule affinity and biologics design. Pfizer owns resulting compounds.</li></ul>
+<h3 class="subsection-title">Therapeutic areas</h3>
+<p class="prose"><b>Therapeutic-area agnostic.</b> Positioned as molecular-design infrastructure for pharma and biotech customers; it runs no pipeline of its own.</p>
+<h3 class="subsection-title">Core technology papers & documents</h3>
+<ul class="links">
+<li><a href="https://doi.org/10.1101/2024.11.19.624167" target="_blank" rel="noopener">Boltz-1: Democratizing Biomolecular Interaction Modeling</a><span class="meta">Wohlwend et al., bioRxiv (2024). Preprint.</span></li>
+<li><a href="https://doi.org/10.1101/2025.06.14.659707" target="_blank" rel="noopener">Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction</a><span class="meta">Passaro et al., bioRxiv (Jun 2025). Preprint, not peer reviewed.</span></li>
+<li><a href="https://www.genengnews.com/topics/artificial-intelligence/boltzgen-democratizes-ai-therapeutic-design-expands-druggable-universe/" target="_blank" rel="noopener">BoltzGen: Toward Universal Binder Design</a><span class="meta">Preprint (Oct 2025); the link goes to GEN’s coverage.</span></li>
+<li><a href="https://github.com/jwohlwend/boltz" target="_blank" rel="noopener">Boltz — GitHub repository</a><span class="meta">Open-source code and weights (MIT licence).</span></li>
+<li><a href="https://jclinic.mit.edu/boltz-2-towards-accurate-and-efficient-binding-affinity-prediction/" target="_blank" rel="noopener">Boltz-2 — MIT Jameel Clinic overview</a><span class="meta">Official MIT Jameel Clinic summary and key points.</span></li>
+</ul>
+<h3 class="subsection-title">YouTube & video</h3>
+<ul class="links">
+<li><a href="https://www.latent.space/p/boltz" target="_blank" rel="noopener">Beyond AlphaFold: How Boltz is Open-Sourcing the Future of Drug Discovery</a><span class="meta">Latent Space episode page (embeds the YouTube video; ~81 min).</span></li>
+<li><a href="https://raisinghealth.simplecast.com/episodes/building-foundation-models-for-biology-EtZbUkZu" target="_blank" rel="noopener">Building AI Foundation Models for Molecular Design (a16z)</a><span class="meta">a16z podcast: Corso and Wohlwend on founding Boltz and Boltz Lab.</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Boltz+Gabriele+Corso+Boltz-2+BoltzGen" target="_blank" rel="noopener">YouTube search: Boltz Corso</a><span class="meta">YouTube search results (fallback)</span></li>
+</ul>
+<div class="callout"><b>Latest</b>Announced a $110M Series A on Nov 18, 2026; the CEO says its next-generation models already produce better molecules than the current releases.</div>
+</section>
+<section class="section" id="en-04">
+<div class="section-num">04</div>
+<h2 class="section-title">Chai <em>Discovery</em></h2>
+<p class="lede">Grew from open structure prediction (Chai-1) to zero-shot de novo antibody design (Chai-2), and signed several big-pharma deals in 2026.</p>
+<div class="tag-row"><span class="tag">Private · $3.8B valuation</span><span class="tag ghost">De novo antibody / biologics design</span><span class="tag ghost">Early OpenAI backing</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>Founded</th><td>March 2024; emerged from stealth on Sep 9, 2024 with Chai-1 and its seed round.</td></tr>
+<tr><th>Headquarters</th><td>San Francisco, California (initially worked out of OpenAI’s San Francisco offices).</td></tr>
+<tr><th>Funding / status (as of Nov 2026)</th><td>~$30M seed (2024) → $70M Series A (2025) → $130M Series B (Dec 2025, $1.3B valuation) → <b>$400M Series C (Jul 2026, $3.8B valuation, led by Index Ventures)</b>. Partners announced in 2026 include Eli Lilly, Pfizer, Novartis, argenx, Bristol Myers Squibb and GSK.</td></tr>
+<tr><th>Founders & backgrounds</th><td><div class="founder"><b>Joshua Meier</b><span>Co-founder and CEO. Previously at Meta (FAIR), OpenAI and Absci; met Jack Dent at Harvard.</span></div><div class="founder"><b>Jack Dent</b><span>Co-founder and President (some reports say CTO). Former Stripe engineer; reportedly introduced to Meier by Sam Altman in 2018.</span></div><div class="founder"><b>Matthew McPartlon</b><span>Co-founder and CTO. Previously at VantAI and Absci; University of Chicago.</span></div><div class="founder"><b>Jacques Boitreaud</b><span>Co-founder. Previously at Aqemia.</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">Key products & services</h3>
+<ul class="bullets"><li><b>Chai-1</b> (Sep 2024): an open multimodal structure-prediction foundation model for proteins, small molecules, DNA, RNA and covalent modifications; the team reports a 77% PoseBusters success rate (AF3: 76%) and offers a free web interface.</li><li><b>Chai-2</b> (Jun 30, 2025): zero-shot de novo antibody design. On 52 targets with no known antibody binder, testing ≤20 designs each gave ~16% hit rate and ≥1 binder for ~50% of targets; 68% wet-lab success for miniproteins; design-to-assay in about two weeks.</li><li><b>Chai-2 follow-up</b> (Nov 2025 preprint): full-length IgG design with developability comparable to clinical antibodies (88 IgGs / 28 antigens, 86% with ≤1 flag), plus hard targets such as GPCRs and peptide–MHC. <b>Chai-3</b> is part of the Jul 2026 Novartis collaboration.</li><li><b>Commercial model</b>: models and custom models for pharma (e.g. the Jan 2026 Lilly collaboration); the stated ambition is a “computer-aided design suite” for molecules.</li></ul>
+<h3 class="subsection-title">Therapeutic areas</h3>
+<p class="prose"><b>Modality-first (antibodies / biologics), not tied to a single indication</b>; emphasises hard-to-drug targets such as GPCRs and peptide–MHC.</p>
+<h3 class="subsection-title">Core technology papers & documents</h3>
+<ul class="links">
+<li><a href="https://doi.org/10.1101/2025.07.05.663018" target="_blank" rel="noopener">Zero-shot antibody design in a 24-well plate (Chai-2)</a><span class="meta">Chai Discovery, bioRxiv (2025). Preprint, not peer reviewed.</span></li>
+<li><a href="https://doi.org/10.1101/2025.11.29.691346" target="_blank" rel="noopener">Drug-like antibody design against challenging targets with atomic precision</a><span class="meta">Chai Discovery, bioRxiv (Nov 2025). Full-length IgG, developability, GPCRs and pMHC.</span></li>
+<li><a href="https://www.chaidiscovery.com/news/introducing-chai-2" target="_blank" rel="noopener">Introducing Chai-2: Zero-shot antibody design in a 24-well plate</a><span class="meta">Official blog post and entry to the technical report.</span></li>
+<li><a href="https://www.chaidiscovery.com" target="_blank" rel="noopener">Chai Discovery — official site (Chai-1 release and news)</a><span class="meta">Chai-1 release notes, news and product entry points.</span></li>
+</ul>
+<h3 class="subsection-title">YouTube & video</h3>
+<ul class="links">
+<li><a href="https://www.youtube.com/watch?v=rFFi2Guv2nU" target="_blank" rel="noopener">No Priors Ep. 121 — Chai-2 with Joshua Meier and Jack Dent</a><span class="meta">YouTube · founders on Chai-2 and company origins (~50 min)</span></li>
+<li><a href="https://www.youtube.com/watch?v=wv53mDmY-k0" target="_blank" rel="noopener">Chai Discovery’s Bitter Lesson: Drug Design Is Another Scaling Problem (Sequoia)</a><span class="meta">YouTube · Meier and McPartlon interview</span></li>
+<li><a href="https://www.youtube.com/watch?v=gKNEjYkfB88" target="_blank" rel="noopener">$4B AI Drug Founder: Left OpenAI, $1T Eli Lilly Signed On, Designing Drugs in 24 Hours</a><span class="meta">YouTube · third-party interview with Meier (title set by the channel)</span></li>
+</ul>
+<div class="callout"><b>Latest</b>Closed a $400M Series C in July 2026 and announced an antibody-discovery collaboration with Bristol Myers Squibb in August 2026.</div>
+</section>
+<section class="section" id="en-05">
+<div class="section-num">05</div>
+<h2 class="section-title">Iambic <em>Therapeutics</em></h2>
+<p class="lede">Physics-informed AI (NeuralPLexer, Enchant) plus automated high-throughput labs, pitching roughly two years from project start to the clinic. It listed on Nasdaq in October 2026.</p>
+<div class="tag-row"><span class="tag">Nasdaq-listed · IAM</span><span class="tag ghost">Small molecules · oncology</span><span class="tag ghost">Phase 1/1b · IAM1363</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>Founded</th><td>Incorporated Oct 2019 (as Entos, Inc.); Miller and Manby took the CEO / CTO roles in 2020, so the company often says “founded in 2020”.</td></tr>
+<tr><th>Headquarters</th><td>San Diego, California (5627 Oberlin Drive).</td></tr>
+<tr><th>Funding / status (as of Nov 2026)</th><td><b>Listed on Nasdaq in October 2026 (IAM)</b> at $16 per share; ~$150M base offering with the underwriters’ option fully exercised. Revenue was ~$18M for the 12 months to Jun 30, 2026 (collaborations with AbbVie, Takeda, Bayer and others).</td></tr>
+<tr><th>Founders & backgrounds</th><td><div class="founder"><b>Tom Miller, PhD</b><span>Co-founder and CEO. Professor of Chemistry at Caltech 2008–2022; B.S. in chemistry and mathematics (Texas A&amp;M), M.Phil. in theoretical chemistry (UCL), Ph.D. in theoretical chemistry (Oxford).</span></div><div class="founder"><b>Fred Manby, PhD</b><span>Co-founder and CTO. Professor of Theoretical Chemistry at the University of Bristol 2010–2022; B.Sc. and Ph.D. in chemistry from the University of York.</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">Key products & services</h3>
+<ul class="bullets"><li><b>NeuralPLexer</b>: a flow-matching generative model that predicts protein–ligand complex structures and conformational change; featured on the cover of <i>Nature Machine Intelligence</i> (2024) and offered for non-commercial use via NVIDIA BioNeMo.</li><li><b>Enchant</b>: a multimodal transformer that predicts preclinical and clinical endpoints; <b>Enchant v3 launched Sep 21, 2026</b>, and the company brands the platform “molecular superintelligence”.</li><li><b>Automated experimentation</b>: plate-based chemistry and biology workflows that synthesise and test hundreds of compounds per programme each week, continuously feeding the models.</li><li><b>IAM1363</b>: an oral, highly selective, brain-penetrant HER2 inhibitor binding the DFG-out (type II) conformation; Phase 1/1b under way, with a registrational trial possible as early as 2027; combination study with Jazz’s zanidatamab. Two preclinical programmes (KIF18A and CDK2/4) are slated for INDs in Q4 2026.</li><li><b>Partners</b>: AbbVie (Jun 2026), Takeda, Bayer and Jazz Pharmaceuticals, among others.</li></ul>
+<h3 class="subsection-title">Therapeutic areas</h3>
+<p class="prose"><b>Oncology</b>: HER2-driven solid tumours (breast cancer, gastroesophageal adenocarcinoma, HER2-amplified / mutant NSCLC); preclinical programmes against KIF18A and CDK2/4.</p>
+<h3 class="subsection-title">Core technology papers & documents</h3>
+<ul class="links">
+<li><a href="https://www.nature.com/articles/s42256-024-00792-z" target="_blank" rel="noopener">State-specific protein–ligand complex structure prediction with a multiscale deep generative model (NeuralPLexer)</a><span class="meta">Qiao, Nie, Vahdat, Miller &amp; Anandkumar, <i>Nat Mach Intell</i> 6:195–208 (2024).</span></li>
+<li><a href="https://www.sec.gov/Archives/edgar/data/1997038/000119312526396704/iam-20260921.htm" target="_blank" rel="noopener">Iambic Therapeutics — Form S-1 (Sep 2026)</a><span class="meta">Prospectus: platform, IAM1363 data and risk factors. The densest public document on the company.</span></li>
+<li><a href="https://www.iambic.ai/post/esmo-iam1363" target="_blank" rel="noopener">IAM1363 ESMO 2025 clinical data</a><span class="meta">Company release: Phase 1/1b monotherapy activity and safety.</span></li>
+<li><a href="https://www.iambic.ai/platform" target="_blank" rel="noopener">Iambic — Platform and Pipeline</a><span class="meta">Official platform page.</span></li>
+</ul>
+<h3 class="subsection-title">YouTube & video</h3>
+<ul class="links">
+<li><a href="https://www.youtube.com/watch?v=aGcfH52_Wow" target="_blank" rel="noopener">Revolutionizing Drug Discovery with AI: Fred Manby of Iambic Therapeutics</a><span class="meta">YouTube · Manby on Enchant and NeuralPLexer3</span></li>
+<li><a href="https://www.broadinstitute.org/videos/machine-learning-drug-discovery-symposium-2025-models-medicines-keynote-delivering-promise" target="_blank" rel="noopener">From Models to Medicines — Tom Miller keynote (Broad Institute, 2025)</a><span class="meta">Broad Institute video page · keynote at the ML in Drug Discovery Symposium</span></li>
+<li><a href="https://www.cnbc.com/video/2026/05/21/disruptor-50-iambic-ceo-on-utilizing-ai-in-the-drug-discovery-process.html" target="_blank" rel="noopener">Disruptor 50: Iambic CEO on utilizing AI in the drug discovery process (CNBC)</a><span class="meta">CNBC video page · May 2026</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Iambic+Therapeutics+NeuralPLexer+Enchant" target="_blank" rel="noopener">Search YouTube for more</a><span class="meta">YouTube search results (fallback)</span></li>
+</ul>
+<div class="callout"><b>Latest</b>Listed on Nasdaq in Oct 2026 and launched Enchant v3 in Sep 2026; a registrational IAM1363 trial could start as early as 2027, subject to regulatory feedback.</div>
+</section>
+<section class="section" id="en-06">
+<div class="section-num">06</div>
+<h2 class="section-title">Noetik</h2>
+<p class="lede">Trains foundation models (OCTO-VC, TARIO-2) on its own multimodal spatial data from human tumours. Core thesis: cancer drugs mostly fail on patient selection, not pharmacology. GSK licensed its models in 2026 in a deal worth ~$50M.</p>
+<div class="tag-row"><span class="tag">Private · Series A</span><span class="tag ghost">Oncology · virtual-cell foundation models</span><span class="tag ghost">Model-licensing business</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>Founded</th><td>2022 (some sources say late 2021; the company described itself as “three years” old in 2025).</td></tr>
+<tr><th>Headquarters</th><td>South San Francisco, California (most sources); some databases list San Francisco.</td></tr>
+<tr><th>Funding / status (as of Nov 2026)</th><td>$14M seed (Sep 2023, led by DCVC) → $40M Series A (Aug 2024, led by Polaris); ~$54M disclosed in total (one database says $62M). <b>Five-year GSK licence signed Jan 8, 2026</b>, with ~$50M upfront and near-term payments plus annual licence fees.</td></tr>
+<tr><th>Founders & backgrounds</th><td><div class="founder"><b>Ron Alfa, MD, PhD</b><span>Co-founder and CEO. Stanford MD-PhD (neuroscience), UCSD B.S., UCL MA in the history of medicine, Paul &amp; Daisy Soros Fellow. Previously led Discovery &amp; Product at Recursion; gave the TEDMED 2018 talk “What if we could map all of human biology?”.</span></div><div class="founder"><b>Jacob Rinaldi, PhD</b><span>Co-founder and Chief Science Officer; formerly Head of Oncology at Recursion.</span></div><div class="founder"><b>Lacey Padron, PhD</b><span>Founding-team member and CTO; the founding team as a whole comes from Recursion and the Parker Institute for Cancer Immunotherapy (PICI).</span></div><div class="founder"><b>Daniel Bear</b><span>VP of AI, leading the self-supervised model architectures; appears alongside Alfa as the company’s voice in interviews, and some outlets call him a founder.</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">Key products & services</h3>
+<ul class="bullets"><li><b>OCTO / OCTO-VC (virtual-cell foundation model)</b>: self-supervised on spatial transcriptomics and related data to simulate spatially resolved single-cell gene expression in intact tumour tissue; the 2024 launch used ~40M spatially resolved cells and shipped with a visualiser, Celleporter.</li><li><b>TARIO-2</b> (early 2026): an autoregressive transformer that predicts ~19,000-gene spatial maps from routine H&amp;E slides; with Agenus it showed at ASCO 2026 that routine pathology images can identify patients who benefit from BOT+BAL in MSS metastatic colorectal cancer.</li><li><b>In-house multimodal data</b>: spatial transcriptomics, spatial proteomics, H&amp;E imaging and whole-exome sequencing from human tumours.</li><li><b>GSK licence</b>: a non-exclusive five-year licence to OCTO-VC models for NSCLC and colorectal cancer with joint custom data generation; Noetik also expanded a collaboration with Bruker (Feb 2026).</li></ul>
+<h3 class="subsection-title">Therapeutic areas</h3>
+<p class="prose"><b>Oncology</b>: NSCLC and colorectal cancer, focused on patient stratification and biomarkers for immuno-oncology drugs, with ambitions toward pan-cancer models.</p>
+<h3 class="subsection-title">Core technology papers & documents</h3>
+<ul class="links">
+<li><a href="https://noetik.ai/octo-vc" target="_blank" rel="noopener">OCTO-VirtualCell and Celleporter — technical report</a><span class="meta">Company technical report (per the company’s LinkedIn announcement).</span></li>
+<li><a href="https://www.noetik.blog/p/gsk-licenses-noetiks-octo-virtual-cell" target="_blank" rel="noopener">GSK Licenses NOETIK’s OCTO-Virtual Cell Foundation Models</a><span class="meta">Alfa’s post on the GSK partnership on the Noetik blog.</span></li>
+<li><a href="https://www.rdworldonline.com/noetiks-tario-2-a-world-model-that-reads-a-tumor-from-a-single-slide/" target="_blank" rel="noopener">Noetik’s TARIO-2: A “world model” that reads a tumor from a single slide</a><span class="meta">R&amp;D World on TARIO-2 and the ASCO 2026 data with Agenus.</span></li>
+<li><a href="https://www.noetik.ai/news" target="_blank" rel="noopener">Noetik — News &amp; Insights</a><span class="meta">Official news page (TARIO-2 white paper and releases).</span></li>
+</ul>
+<h3 class="subsection-title">YouTube & video</h3>
+<ul class="links">
+<li><a href="https://www.latent.space/p/noetik" target="_blank" rel="noopener">Training Transformers to solve 95% failure rate of Cancer Trials — Ron Alfa &amp; Daniel Bear (Latent Space)</a><span class="meta">Latent Space episode page (with YouTube video, ~80 min).</span></li>
+<li><a href="https://www.tedmed.com/talks/show?id=767353" target="_blank" rel="noopener">What if we could map all of human biology? — Ron Alfa, TEDMED 2018</a><span class="meta">TEDMED talk page (from Alfa’s Recursion days).</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Noetik+Ron+Alfa+OCTO-VC" target="_blank" rel="noopener">YouTube search: Noetik Ron Alfa</a><span class="meta">YouTube search results (fallback; includes NYSE TV interview)</span></li>
+</ul>
+<div class="callout"><b>Latest</b>On Jun 15, 2026 it released TARIO-2 results predicting response to BOT+BAL. The deal structure is seen as a rare case of pharma paying directly for AI models rather than drug assets.</div>
+</section>
+<section class="section" id="en-07">
+<div class="section-num">07</div>
+<h2 class="section-title">Modella <em>AI</em></h2>
+<p class="lede">A pathology-AI company spun out of the Mahmood Lab at Harvard / Mass General Brigham, built around PathChat and multimodal pathology foundation models. Acquired by AstraZeneca and folded into its oncology R&amp;D.</p>
+<div class="tag-row"><span class="tag">Acquired by AstraZeneca (Jan 13, 2026)</span><span class="tag ghost">Pathology foundation models + agentic AI</span><span class="tag ghost">Oncology</span></div>
+<div class="table-wrap"><table class="data-table facts"><tbody>
+<tr><th>Founded</th><td>2024 (emerged from stealth on Jun 18, 2024 with PathChat 2).</td></tr>
+<tr><th>Headquarters</th><td>Boston, Massachusetts; now a member of the AstraZeneca Group.</td></tr>
+<tr><th>Funding / status</th><td><b>Acquired by AstraZeneca on Jan 13, 2026</b>; terms undisclosed. The two had collaborated since July 2025, and AstraZeneca described it as the first acquisition of an AI firm by a big pharma.</td></tr>
+<tr><th>Founders & backgrounds</th><td><div class="founder"><b>Jill Stefanelli, PhD</b><span>President, co-founder and CEO. Previously President and Chief Business Officer of Paige AI, and earlier led companion-diagnostic partnerships at Invitae / ArcherDX; Ph.D. in molecular medicine and diagnostic pathology from Kansas State University.</span></div><div class="founder"><b>Faisal Mahmood, PhD</b><span>Co-founder; Professor of computational pathology at Harvard Medical School / Mass General Brigham, head of the Mahmood Lab and senior author of UNI, CONCH, PathChat and TITAN.</span></div><div class="founder"><b>Richard J. Chen, PhD</b><span>Founding CTO; worked on UNI, CONCH and PathChat in the Mahmood group during his Harvard PhD.</span></div><div class="founder"><b>Ming Yang (Max) Lu, PhD</b><span>Founding Chief Science Officer; first author of the PathChat paper.</span></div></td></tr>
+</tbody></table></div>
+<h3 class="subsection-title">Key products & services</h3>
+<ul class="bullets"><li><b>PathChat / PathChat 2</b>: a multimodal generative AI copilot for human pathology that combines images and language for differential diagnosis, morphology description and open-ended Q&amp;A; <b>PathChat DX</b> received FDA Breakthrough Device Designation.</li><li><b>Multimodal pathology foundation models</b>: Modella holds an exclusive licence to PathChat and other Mahmood Lab models (e.g. UNI, CONCH, TITAN). TITAN was pretrained on ~336K whole-slide images and aligned with pathology reports and synthetic captions.</li><li><b>Agentic AI platform</b>: for diagnostic, prognostic and therapeutic workflows; used in AstraZeneca’s oncology clinical development and biomarker discovery.</li><li><b>Afterwards</b>: four members of the founding team, including Mahmood and Lu, launched Aevius in Nov 2026 ($22M seed led by Insight Partners) to build clinical-data AI.</li></ul>
+<h3 class="subsection-title">Therapeutic areas</h3>
+<p class="prose"><b>Oncology</b> (pathology, biomarkers, clinical development and companion diagnostics). It does not generate molecules.</p>
+<h3 class="subsection-title">Core technology papers & documents</h3>
+<ul class="links">
+<li><a href="https://doi.org/10.1038/s41586-024-07618-3" target="_blank" rel="noopener">A multimodal generative AI copilot for human pathology (PathChat)</a><span class="meta">Lu et al., <i>Nature</i> (Jun 12, 2024).</span></li>
+<li><a href="https://www.nature.com/articles/s41591-024-02857-3" target="_blank" rel="noopener">Towards a general-purpose foundation model for computational pathology (UNI)</a><span class="meta">Chen et al., <i>Nat Med</i> (2024). Vision-only foundation model; CONCH, published alongside, is the vision–language model.</span></li>
+<li><a href="https://arxiv.org/abs/2411.19666" target="_blank" rel="noopener">A multimodal whole-slide foundation model for pathology (TITAN)</a><span class="meta">Ding et al., <i>Nat Med</i> 31:3749–3761 (2025); link is the arXiv version.</span></li>
+<li><a href="https://arxiv.org/pdf/2506.20964" target="_blank" rel="noopener">Evidence-based diagnostic reasoning with multi-agent copilot for human pathology (PathChat+, SlideSeek)</a><span class="meta">arXiv 2025: agentic diagnostic reasoning for pathology.</span></li>
+<li><a href="https://www.modella.ai/az-acquisition" target="_blank" rel="noopener">Modella AI Announces Acquisition by AstraZeneca</a><span class="meta">Official acquisition announcement.</span></li>
+</ul>
+<h3 class="subsection-title">YouTube & video</h3>
+<ul class="links">
+<li><a href="https://youtu.be/fWDU5P0ap28" target="_blank" rel="noopener">PathChat 2 launch video (Modella AI)</a><span class="meta">YouTube · PathChat 2 video linked from Modella’s stealth-exit announcement</span></li>
+<li><a href="https://www.youtube.com/results?search_query=Modella+AI+PathChat+Faisal+Mahmood" target="_blank" rel="noopener">YouTube search: Modella AI PathChat</a><span class="meta">YouTube search results (fallback)</span></li>
+</ul>
+<div class="callout"><b>Latest</b>In Nov 2026 Aevius, founded by Modella alumni, raised a $22M seed; Modella itself now operates as part of AstraZeneca’s oncology AI capability.</div>
+</section>
+<section class="section" id="en-08"><div class="section-num">08</div><h2 class="section-title">Data notes &amp; <em>verification</em></h2><ul class="note-list"><li><b>Founding dates differ by definition</b>: Isomorphic (incorporated Feb 2021 / announced Nov 2021), Boltz (research 2024 / company 2026), Iambic (incorporated 2019 / operating from 2020), Noetik (2021–2022) and Insilico (a few outlets say 2013). This document follows company disclosures or regulatory filings and notes the ambiguity in each section.</li><li><b>Headquarters differ across sources</b>: Boltz is Cambridge, MA in its official release but London in some third-party databases; Noetik is mostly South San Francisco; Insilico runs dual headquarters in Boston and Hong Kong.</li><li><b>Performance figures are mostly company-reported</b>: IsoDDE vs AF3 / Boltz-2 / FEP+, Chai-2 hit rates and Boltz-2’s closeness to FEP come from company reports or preprints. Boltz-2, BoltzGen and Chai-2 are not peer reviewed, and IsoDDE is proprietary and cannot be independently reproduced.</li><li><b>Funding and valuations come from media and company announcements</b> and vary slightly by database (e.g. Noetik $54M vs $62M total). Modella’s acquisition price is undisclosed.</li><li><b>YouTube links</b>: every YouTube link listed was returned by search; items marked “fallback” are YouTube search pages. For Boltz and Noetik the main interviews are given as Latent Space pages (with embedded YouTube) because direct YouTube URLs were not retrieved. Third-party commentary is labelled as unofficial.</li><li><b>Timeliness</b>: current to Nov 24, 2026. Isomorphic’s Series C (Nov 17), Boltz’s Series A (Nov 18) and Iambic’s listing (Oct) are recent and details may change.</li></ul></section>
+</div></div></div></main>
+<footer class="footer"><div class="container"><span data-zh="信息来自公司官网与新闻稿、SEC / HKEX 文件、同行评审论文与预印本、主流媒体；性能指标多为公司自报，投资或决策前请回到原始来源核对。" data-en="Sources: company sites and releases, SEC / HKEX filings, peer-reviewed papers and preprints, and mainstream press. Performance metrics are mostly company-reported; verify against primary sources before relying on them.">信息来自公司官网与新闻稿、SEC / HKEX 文件、同行评审论文与预印本、主流媒体；性能指标多为公司自报，投资或决策前请回到原始来源核对。</span></div></footer>
+<script>
+(function(){
+  var ticking=false;
+  function update(){
+    var panel=document.querySelector('.panel.active');
+    var links=panel.querySelectorAll('.toc-link');
+    var sections=panel.querySelectorAll('section.section');
+    var current=sections[0].id;
+    sections.forEach(function(s){ if(s.getBoundingClientRect().top<=150) current=s.id; });
+    links.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href')==='#'+current); });
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){ if(!ticking){ticking=true;requestAnimationFrame(update);} },{passive:true});
+  function setLang(lang){
+    document.documentElement.lang = lang==='zh' ? 'zh-CN' : 'en';
+    document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('active',t.dataset.tab===lang);});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('active',p.id==='panel-'+lang);});
+    document.querySelectorAll('[data-zh][data-en]').forEach(function(el){el.innerHTML=el.getAttribute('data-'+lang);});
+    document.title = lang==='zh' ? 'AI 原生药物发现公司 · 七家公司介绍' : 'AI-Native Drug Discovery · Seven Companies';
+    window.scrollTo({top:0,behavior:'auto'});
+    update();
+  }
+  document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){setLang(t.dataset.tab);});});
+  update();
+})();
+</script>
+</body>
+</html>
